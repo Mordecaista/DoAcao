@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DoAcao2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_add_desire">AddDesireActivity</string>
+    <string name="add">Adicionar</string>
+    <string name="cadastrar_desejo_doacao">Cadastrar Desejo de Doação</string>
+    <string name="email">Email</string>
+    <string name="Phone">Telefone</string>
+    <string name="location">Localização</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="cadatrado_com_sucesso">Cadastrado com Sucesso!</string>
+    <string name="erro">Erro. Tente Novamente!</string>
+
+    <string-array name="itens">
+        <item>Eletrodmestico</item>
+        <item>Alimentos</item>
+        <item>Móveis</item>
+        <item>Corpo</item>
+        <item>Dinheiro</item>
+        <item>Roupas</item>
+    </string-array>
+
+    <string name="title_activity_maps">Map</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
