@@ -1,8 +1,12 @@
 package doacao.doacao2;
 
+import android.app.ListFragment;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -32,12 +36,21 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.container);
         mapFragment.getMapAsync(this);
 
+        //ListFragment listFragment = (ListFragment)
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+
         return true;
     }
 
@@ -62,10 +75,6 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         map.setMyLocationEnabled(true);
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(deltaRoom, 13));
         loadInstituions();
-        /*map.addMarker(new MarkerOptions()
-                .title("Delta Room")
-                .snippet("The chimbinha room")
-                .position(deltaRoom));*/
     }
 
     public void loadInstituions(){

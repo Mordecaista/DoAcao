@@ -59,29 +59,13 @@ public class AddDesireActivity extends ActionBarActivity {
                 public void done(ParseException e) {
                     if(e == null){
                         Toast.makeText(mContext,getString(R.string.cadatrado_com_sucesso),Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                     else{
                         Toast.makeText(mContext,getString(R.string.erro),Toast.LENGTH_SHORT).show();
                     }
                 }
             });
-//            ParseObject parse = new ParseObject("Desire");
-//            parse.put("email", email);
-//            parse.put("phone",phone);
-//            parse.put("latitude",latitude);
-//            parse.put("longitude",longitude);
-//            parse.put("item",item);
-//            parse.saveInBackground(new SaveCallback(){
-//                @Override
-//                public void done(ParseException e) {
-//                    if(e == null){
-//                        Toast.makeText(mContext,getString(R.string.cadatrado_com_sucesso),Toast.LENGTH_SHORT).show();
-//                    }
-//                    else{
-//                        Toast.makeText(mContext,getString(R.string.erro),Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            });
         }
     };
 

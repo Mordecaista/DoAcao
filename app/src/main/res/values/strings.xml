@@ -25,5 +25,18 @@
 
     <string name="title_activity_maps">Map</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">search</string>
+    <string name="searchHere">Pesquise aqui</string>
+    <string name="title_activity_intitution_register">IntitutionRegister</string>
+    <string name="registerNewInstitution">Cadastrar Nova Instituição</string>
+    <string name="name">Nome</string>
+    <string name="cnpj">CNPJ</string>
+    <string name="password">Senha</string>
+    <string name="passwordConfirmation">Confirmação de Senha</string>
+    <string name="city">Cidade</string>
+    <string name="state">Estado</string>
+    <string name="street">Rua</string>
+    <string name="number">Numero</string>
+    <string name="apartment">Complemento</string>
 
 </resources>
