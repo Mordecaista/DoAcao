@@ -13,22 +13,11 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="cadatrado_com_sucesso">Cadastrado com Sucesso!</string>
     <string name="erro">Erro. Tente Novamente!</string>
-
-    <string-array name="itens">
-        <item>Eletrodmestico</item>
-        <item>Alimentos</item>
-        <item>Móveis</item>
-        <item>Corpo</item>
-        <item>Dinheiro</item>
-        <item>Roupas</item>
-    </string-array>
-
     <string name="title_activity_maps">Map</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search">search</string>
     <string name="searchHere">Pesquise aqui</string>
-    <string name="title_activity_intitution_register">IntitutionRegister</string>
-    <string name="registerNewInstitution">Cadastrar Nova Instituição</string>
+    <string name="title_activity_institution_register">Cadastrar Nova Instituição</string>
     <string name="name">Nome</string>
     <string name="cnpj">CNPJ</string>
     <string name="password">Senha</string>
@@ -38,5 +27,16 @@
     <string name="street">Rua</string>
     <string name="number">Numero</string>
     <string name="apartment">Complemento</string>
+
+    <string-array name="items">
+        <item>Eletrodomésticos</item>
+        <item>Alimentos</item>
+        <item>Móveis</item>
+        <item>Dinheiro</item>
+        <item>Roupas</item>
+        <item>Sangue</item>
+        <item>Remédios</item>
+    </string-array>
+
 
 </resources>

@@ -23,7 +23,7 @@ public class AddDesireActivity extends ActionBarActivity {
     private EditText mPhone;
     private EditText mLatitude;
     private EditText mLongitude;
-    private Spinner mItens;
+    private Spinner mItems;
     private Button mSubmit;
     private Context mContext;
 
@@ -36,12 +36,12 @@ public class AddDesireActivity extends ActionBarActivity {
         mPhone = (EditText)findViewById(R.id.edit_phone);
         mLatitude = (EditText)findViewById(R.id.latitude);
         mLongitude = (EditText)findViewById(R.id.longitude);
-        mItens = (Spinner)findViewById(R.id.itens);
+        mItems = (Spinner)findViewById(R.id.items);
         mSubmit = (Button)findViewById(R.id.submit);
         mSubmit.setOnClickListener(mOnSubmitClickListener);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.itens,android.R.layout.simple_spinner_item);
-        mItens.setAdapter(adapter);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.items,android.R.layout.simple_spinner_item);
+        mItems.setAdapter(adapter);
 
     }
 
@@ -52,7 +52,7 @@ public class AddDesireActivity extends ActionBarActivity {
             String phone = mPhone.getText().toString();
             double latitude = Double.parseDouble(mLatitude.getText().toString());
             double longitude = Double.parseDouble(mLongitude.getText().toString());
-            String item = mItens.getSelectedItem().toString();
+            String item = mItems.getSelectedItem().toString();
             Desire desire = new Desire(email,phone,latitude,longitude,item);
             desire.saveInBackground(new SaveCallback(){
                 @Override
@@ -71,19 +71,13 @@ public class AddDesireActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_add_desire, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }

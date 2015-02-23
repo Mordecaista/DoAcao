@@ -18,7 +18,7 @@
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/itens" />
+        android:id="@+id/items" />
 
     <LinearLayout
         android:orientation="horizontal"
