@@ -27,6 +27,7 @@
     <string name="street">Rua</string>
     <string name="number">Numero</string>
     <string name="apartment">Complemento</string>
+    <string name="searchDesires">Procurar Doadores</string>
 
     <string-array name="items">
         <item>Eletrodomésticos</item>
@@ -37,6 +38,8 @@
         <item>Sangue</item>
         <item>Remédios</item>
     </string-array>
+    <string name="title_activity_desire_search_result">DesireSearchResultActivity</string>
+    <string name="desireSearch">Pesquisa de Doadores</string>
 
 
 </resources>

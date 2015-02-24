@@ -1,10 +1,12 @@
 package doacao.doacao2;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -65,7 +67,6 @@ public class InstitutionRegister extends ActionBarActivity {
                 public void done(ParseException e) {
                     if(e == null){
                         Toast.makeText(mContext, getString(R.string.cadatrado_com_sucesso), Toast.LENGTH_SHORT).show();
-                        finish();
                     }
                     else{
                         e.printStackTrace();
@@ -120,6 +121,13 @@ public class InstitutionRegister extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_intitution_register, menu);
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.AIG_search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
         return true;
     }
 
