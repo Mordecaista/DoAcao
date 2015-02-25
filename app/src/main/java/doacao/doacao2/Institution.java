@@ -1,9 +1,13 @@
 package doacao.doacao2;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.parse.ParseClassName;
+import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,17 +30,29 @@ public class Institution extends ParseObject{
         put("street",street);
         put("number",number);
         put("apartment",apartment);
-        put("latitude",latitude);
-        put("longitude",longitude);
         put("phone",phone);
 
         JSONArray myArray = new JSONArray();
         for(String n : items) myArray.put(n);
         put("items",myArray);
 
-        ParseObject user = new ParseObject("User");
-        user.put("email",email);
-        user.put("password",password);
+        ParseGeoPoint geoPoint = new ParseGeoPoint(latitude,longitude);
+        put("location",geoPoint);
+
+        if(ParseUser.getCurrentUser() == null) {
+            ParseUser user = new ParseUser();
+            user.setUsername(name);
+            user.setPassword(password);
+            user.setEmail(email);
+            try {
+                user.signUp();
+                put("user",user);
+            }
+            catch (ParseException e){
+                Log.e("DOACAO2",e.toString());
+                e.printStackTrace();
+            }
+        }
     }
 
     public String getName(){
@@ -60,11 +76,8 @@ public class Institution extends ParseObject{
     public String getApartment(){
         return getString("apartment");
     }
-    public double getLatitude(){
-        return getDouble("latitude");
-    }
-    public double getLongitude(){
-        return getDouble("longitude");
+    public ParseGeoPoint getLocation(){
+        return getParseGeoPoint("location");
     }
     public ArrayList<String> getItems(){
             ArrayList<String> items = new ArrayList<String>();
@@ -103,11 +116,9 @@ public class Institution extends ParseObject{
     public void setApartment(String apartment){
         put("apartment",apartment);
     }
-    public void setLatitude(double latitude){
-        put("latitude",latitude);
-    }
-    public void setLongitude(double longitude){
-        put("longitude",longitude);
+    public void setLocation(double latitude, double longitude){
+        ParseGeoPoint geoPoint = new ParseGeoPoint(latitude,longitude);
+        put("location",geoPoint);
     }
     public void setItems(ArrayList<String> items){
         JSONArray myArray = new JSONArray();

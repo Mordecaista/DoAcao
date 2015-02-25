@@ -104,7 +104,7 @@ public class InstitutionRegister extends ActionBarActivity {
 
         mName.setText("test");
         mCNPJ.setText("123456789");
-        mEmail.setText("a@a.a");
+        mEmail.setText("test@test.com");
         mPassword.setText("t");
         mPasswordConf.setText("e");
         mCountry.setText("Brasil");

@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * Created by Alexandre on 24/02/2015.
@@ -14,9 +17,9 @@ import android.widget.TextView;
 public class ListArrayAdapter extends ArrayAdapter<String> {
 
     private final Context context;
-    private final String[] values;
+    private final ArrayList<String> values;
 
-    public ListArrayAdapter(Context context, String[] values) {
+    public ListArrayAdapter(Context context, ArrayList<String> values) {
         super(context, R.layout.list_item_layout,values);
         this.context = context;
         this.values = values;
@@ -29,7 +32,7 @@ public class ListArrayAdapter extends ArrayAdapter<String> {
         View rowView = inflater.inflate(R.layout.list_item_layout, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.list_item_text);
         //ImageView imageView = (ImageView) rowView.findViewById(R.id.list_item_image);
-        textView.setText(values[position]);
+        textView.setText(values.get(position));
         // change the icon for Windows and iPhone
 //        String s = values[position];
 //        if (s.startsWith("iPhone")) {

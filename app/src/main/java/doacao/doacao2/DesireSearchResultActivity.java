@@ -11,21 +11,29 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DesireSearchResultActivity extends ActionBarActivity {
 
     private ListView list;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desire_search_result);
+        mContext = this;
         list = (ListView) findViewById(R.id.ADS_results);
-        String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2" };
-        ListArrayAdapter adapter = new ListArrayAdapter(this, values);
+        ListArrayAdapter adapter = new ListArrayAdapter(this, searchInstitutions("blank"));
         list.setAdapter(adapter);
     }
 
@@ -57,5 +65,21 @@ public class DesireSearchResultActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public ArrayList<String> searchInstitutions(String criteria){
+        ArrayList<String> array = new ArrayList<String>();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Desire");
+        try {
+            List<ParseObject> results = query.find();
+            for (int i = 0; i < results.size() && i < 100; i++) {
+                array.add(((Desire) results.get(i)).getUsername() + ((Desire) results.get(i)).getCreatedAt().toString());
+                //array.add(((Desire) results.get(i)).getCreatedAt().toString());
+            }
+        }
+        catch (ParseException e){
+            return array;
+        }
+        return array;
     }
 }
