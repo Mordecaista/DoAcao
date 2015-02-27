@@ -593,7 +593,7 @@ int layout list_item_layout 0x7f03001b
 int layout support_simple_spinner_dropdown_item 0x7f03001c
 int menu menu_add_desire 0x7f0f0000
 int menu menu_desire_search_result 0x7f0f0001
-int menu menu_intitution_register 0x7f0f0002
+int menu menu_institution_register 0x7f0f0002
 int menu menu_main 0x7f0f0003
 int raw gtm_analytics 0x7f060000
 int string Phone 0x7f0d0000

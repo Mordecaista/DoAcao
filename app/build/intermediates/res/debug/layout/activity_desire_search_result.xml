@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context="doacao.doacao2.DesireSearchResultActivity">
+    tools:context="doacao.doacao2.Activities.DesireSearchResultActivity">
 
     <ListView
         android:layout_width="match_parent"

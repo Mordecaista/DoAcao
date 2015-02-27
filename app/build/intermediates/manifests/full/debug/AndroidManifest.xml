@@ -27,8 +27,12 @@
         android:theme="@style/AppTheme" >
         <uses-library android:name="com.google.android.maps" />
 
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".Activities.DesireSearchResultActivity" />
+
         <activity
-            android:name="doacao.doacao2.MainActivity"
+            android:name="doacao.doacao2.Activities.MainActivity"
             android:label="@string/app_name" >
 
             <!-- <intent-filter> -->
@@ -41,12 +45,12 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity
-            android:name="doacao.doacao2.AddDesireActivity"
+            android:name="doacao.doacao2.Activities.AddDesireActivity"
             android:label="@string/title_activity_add_desire"
-            android:parentActivityName="doacao.doacao2.MainActivity" >
+            android:parentActivityName="doacao.doacao2.Activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="doacao.doacao2.MainActivity" />
+                android:value=".Activities.MainActivity" />
         </activity>
 
         <meta-data
@@ -57,22 +61,37 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="doacao.doacao2.InstitutionRegister"
+            android:name="doacao.doacao2.Activities.InstitutionRegisterActivity"
             android:label="@string/title_activity_institution_register" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
         <activity
-            android:name="doacao.doacao2.DesireSearchResultActivity"
-            android:label="@string/desireSearch" >
+            android:name="doacao.doacao2.Activities.DesireSearchResultActivity"
+            android:label="@string/desireSearch"
+            android:launchMode="singleTop" >
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
     </application>
 

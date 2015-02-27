@@ -1863,7 +1863,7 @@ containing a value of this type.
     public static final class menu {
         public static final int menu_add_desire=0x7f0f0000;
         public static final int menu_desire_search_result=0x7f0f0001;
-        public static final int menu_intitution_register=0x7f0f0002;
+        public static final int menu_institution_register=0x7f0f0002;
         public static final int menu_main=0x7f0f0003;
     }
     public static final class raw {

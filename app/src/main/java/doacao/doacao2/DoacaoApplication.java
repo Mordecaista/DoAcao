@@ -5,6 +5,9 @@ import android.app.Application;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
+import doacao.doacao2.Objects.Desire;
+import doacao.doacao2.Objects.Institution;
+
 /**
  * Created by Alexandre on 09/02/2015.
  */

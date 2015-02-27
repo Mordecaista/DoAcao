@@ -40,6 +40,8 @@
     </string-array>
     <string name="title_activity_desire_search_result">DesireSearchResultActivity</string>
     <string name="desireSearch">Pesquisa de Doadores</string>
+    <string name="title_activity_desire_details">DesireDetailsActivity</string>
+    <string name="wantsToDonate">Deseja Doar</string>
 
 
 </resources>
