@@ -17,8 +17,6 @@ import java.util.List;
 @ParseClassName("Desire")
 public class Desire extends ParseObject {
 
-    private String username;
-
     public Desire(){
 
     }
@@ -31,7 +29,7 @@ public class Desire extends ParseObject {
         ParseGeoPoint geoPoint = new ParseGeoPoint(latitude,longitude);
         put("location",geoPoint);
 
-        put("user", ParseUser.getCurrentUser());
+        put("userId", ParseUser.getCurrentUser().getObjectId());
     }
 
     public String getEmail(){
@@ -60,6 +58,19 @@ public class Desire extends ParseObject {
         put("item",item);
     }
     public String getUsername(){
-        return getParseObject("user").getString("name");
+        String aux = "";
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.whereEqualTo("objectId", get("userId").toString());
+        try {
+            List<ParseUser> results = query.find();
+            if(results.size() > 0)
+               aux = results.get(0).getUsername();
+        }
+        catch(ParseException e){
+            e.printStackTrace();
+        }
+        finally{
+            return aux;
+        }
     }
 }

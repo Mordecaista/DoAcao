@@ -93,6 +93,10 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
+        <activity
+            android:name="doacao.doacao2.Activities.DesireDetailsActivity"
+            android:label="@string/title_activity_desire_details" >
+        </activity>
     </application>
 
 </manifest>

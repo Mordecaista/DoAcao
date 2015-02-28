@@ -7,39 +7,44 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CircleOptions;
+import com.google.android.gms.maps.model.LatLng;
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import doacao.doacao2.Objects.Desire;
 import doacao.doacao2.R;
 
-public class DesireDetailsActivity extends ActionBarActivity {
+public class DesireDetailsActivity extends ActionBarActivity implements OnMapReadyCallback {
 
-    private TextView user;
-    private TextView items;
-    private TextView email;
-    private TextView phone;
     private Desire desire;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_desire_details);
+        setContentView(R.layout.activity_desire_details);
         Intent intent = getIntent();
-        user = (TextView)findViewById(R.id.ADD_user);
-        items = (TextView)findViewById(R.id.ADD_items);
-        email = (TextView)findViewById(R.id.ADD_email);
-        phone = (TextView)findViewById(R.id.ADD_phone);
+        TextView user = (TextView)findViewById(R.id.ADD_user);
+        TextView items = (TextView)findViewById(R.id.ADD_items);
+        TextView email = (TextView)findViewById(R.id.ADD_email);
+        TextView phone = (TextView)findViewById(R.id.ADD_phone);
 
         desire = searchDesire(intent.getStringExtra("objectId"));
         user.setText(desire.getUsername());
         items.setText(formatItems(desire.getItem()));
         email.setText(desire.getEmail());
         phone.setText(desire.getPhone());
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.ADD_map);
+        mapFragment.getMapAsync(this);
     }
 
     private String formatItems(String item) {
@@ -47,13 +52,20 @@ public class DesireDetailsActivity extends ActionBarActivity {
     }
 
     public Desire searchDesire(String objectId) {
-        ArrayList<ArrayList<String>> array = new ArrayList<ArrayList<String>>();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Desire");
         query.whereEqualTo("objectId",objectId);
         try {
-            return (Desire) query.getFirst();
+            List<ParseObject> results = query.find();
+            if(results.size() > 0){
+                return (Desire) results.get(0);
+            }
+            else{
+                return null;
+            }
+
         }
         catch (ParseException e){
+            e.printStackTrace();
             return null;
         }
     }
@@ -68,16 +80,26 @@ public class DesireDetailsActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        ParseGeoPoint geoPoint = desire.getLocation();
+        LatLng position = new LatLng(geoPoint.getLatitude(), geoPoint.getLongitude());
+
+        googleMap.setMyLocationEnabled(true);
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 13));
+        googleMap.addCircle(new CircleOptions()
+                .center(position)
+                .radius(300)
+                .strokeColor(0x7F0000FF)
+                .strokeWidth(5)
+                .fillColor(0x7F00FFFF));
     }
 }

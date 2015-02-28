@@ -36,8 +36,6 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.container);
         mapFragment.getMapAsync(this);
-
-        //ListFragment listFragment = (ListFragment)
     }
 
 
