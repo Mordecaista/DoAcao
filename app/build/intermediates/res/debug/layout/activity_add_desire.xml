@@ -78,6 +78,14 @@
         android:id="@+id/longitude"
         android:hint="longitude"/>
 
+    <fragment
+        android:id="@+id/AAD_map"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        class="com.google.android.gms.maps.SupportMapFragment"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -32,8 +32,7 @@ public class ListArrayAdapter extends ArrayAdapter<ArrayList<String>> {
         View rowView = inflater.inflate(R.layout.list_item_layout, parent, false);
         TextView text = (TextView) rowView.findViewById(R.id.list_item_text);
         text.setText(values.get(position).get(0));
-        TextView id = (TextView) rowView.findViewById(R.id.list_item_id);
-        id.setText(values.get(position).get(1));
+        rowView.setTag(values.get(position).get(1));
         return rowView;
     }
 }

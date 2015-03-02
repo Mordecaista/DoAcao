@@ -3,12 +3,16 @@ package doacao.doacao2.Activities;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -22,12 +26,15 @@ import com.parse.ParseQuery;
 
 import java.util.List;
 
+import doacao.doacao2.Objects.Institution;
 import doacao.doacao2.R;
 
 
-public class MainActivity extends ActionBarActivity implements OnMapReadyCallback{
+public class MainActivity extends ActionBarActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private GoogleMap map;
+    private Location mLastLocation;
+    private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,8 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.container);
         mapFragment.getMapAsync(this);
+
+        //buildGoogleApiClient();
     }
 
 
@@ -69,14 +78,18 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap map) {
         this.map = map;
-        LatLng deltaRoom = new LatLng(-30.058067, -51.169398);
-
         map.setMyLocationEnabled(true);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(deltaRoom, 13));
-        loadInstituions();
+        map.getUiSettings().setMyLocationButtonEnabled(true);
+        map.getUiSettings().setZoomControlsEnabled(true);
+        map.getUiSettings().setAllGesturesEnabled(true);
+        if(mLastLocation != null) {
+            LatLng position = new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 13));
+        }
+        loadInstitutions();
     }
 
-    public void loadInstituions(){
+    public void loadInstitutions(){
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Institution");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -85,15 +98,42 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                     for(int i = 0; i < parseObjects.size(); i++){
                         LatLng location = new LatLng(parseObjects.get(i).getDouble("latitude"),parseObjects.get(i).getDouble("longitude"));
                         map.addMarker(new MarkerOptions()
-                                .title(""+i)
-                                .snippet(""+i)
+                                .title(((Institution)parseObjects.get(i)).getName())
+                                .snippet(((Institution)parseObjects.get(i)).getItems().get(0))//TODO: Fix this to get the whole list formatted correctly
                                 .position(location));
                     }
                 }
                 else{
-
+                    //TODO:something here?
                 }
             }
         });
+    }
+
+    protected synchronized void buildGoogleApiClient() {
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
+    }
+
+    @Override
+    public void onConnected(Bundle bundle) {
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        if(map != null) {
+            LatLng position = new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 13));
+        }
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+
     }
 }

@@ -1686,52 +1686,54 @@ containing a value of this type.
         public static final int common_signin_btn_text_normal_light=0x7f02004a;
         public static final int common_signin_btn_text_pressed_dark=0x7f02004b;
         public static final int common_signin_btn_text_pressed_light=0x7f02004c;
-        public static final int ic_action_next_item=0x7f02004d;
-        public static final int ic_action_search=0x7f02004e;
-        public static final int ic_launcher=0x7f02004f;
-        public static final int ic_plusone_medium_off_client=0x7f020050;
-        public static final int ic_plusone_small_off_client=0x7f020051;
-        public static final int ic_plusone_standard_off_client=0x7f020052;
-        public static final int ic_plusone_tall_off_client=0x7f020053;
-        public static final int powered_by_google_dark=0x7f020054;
-        public static final int powered_by_google_light=0x7f020055;
+        public static final int ic_action_new_event=0x7f02004d;
+        public static final int ic_action_next_item=0x7f02004e;
+        public static final int ic_action_search=0x7f02004f;
+        public static final int ic_launcher=0x7f020050;
+        public static final int ic_plusone_medium_off_client=0x7f020051;
+        public static final int ic_plusone_small_off_client=0x7f020052;
+        public static final int ic_plusone_standard_off_client=0x7f020053;
+        public static final int ic_plusone_tall_off_client=0x7f020054;
+        public static final int powered_by_google_dark=0x7f020055;
+        public static final int powered_by_google_light=0x7f020056;
     }
     public static final class id {
-        public static final int ADD_amp=0x7f0b005c;
-        public static final int ADD_email=0x7f0b005f;
-        public static final int ADD_items=0x7f0b005e;
-        public static final int ADD_map=0x7f0b0061;
-        public static final int ADD_phone=0x7f0b0060;
-        public static final int ADD_user=0x7f0b005d;
-        public static final int ADS_results=0x7f0b0062;
+        public static final int AAD_map=0x7f0b005b;
+        public static final int ADD_email=0x7f0b0060;
+        public static final int ADD_items=0x7f0b005f;
+        public static final int ADD_location=0x7f0b005d;
+        public static final int ADD_map=0x7f0b0062;
+        public static final int ADD_phone=0x7f0b0061;
+        public static final int ADD_user=0x7f0b005e;
+        public static final int ADS_results=0x7f0b0063;
         public static final int ADS_search=0x7f0b0082;
-        public static final int AIG_apartment=0x7f0b0079;
-        public static final int AIG_city=0x7f0b0073;
-        public static final int AIG_cnpj=0x7f0b0065;
-        public static final int AIG_conf_pass=0x7f0b006d;
-        public static final int AIG_country=0x7f0b006f;
-        public static final int AIG_edit_apartment=0x7f0b007a;
-        public static final int AIG_edit_city=0x7f0b0074;
-        public static final int AIG_edit_cnpj=0x7f0b0066;
-        public static final int AIG_edit_conf_pass=0x7f0b006e;
-        public static final int AIG_edit_country=0x7f0b0070;
-        public static final int AIG_edit_email=0x7f0b006a;
-        public static final int AIG_edit_name=0x7f0b0064;
-        public static final int AIG_edit_number=0x7f0b0078;
-        public static final int AIG_edit_password=0x7f0b006c;
-        public static final int AIG_edit_phone=0x7f0b0068;
-        public static final int AIG_edit_state=0x7f0b0072;
-        public static final int AIG_edit_street=0x7f0b0076;
-        public static final int AIG_email=0x7f0b0069;
-        public static final int AIG_items=0x7f0b007b;
-        public static final int AIG_name=0x7f0b0063;
-        public static final int AIG_number=0x7f0b0077;
-        public static final int AIG_password=0x7f0b006b;
-        public static final int AIG_phone=0x7f0b0067;
+        public static final int AIG_apartment=0x7f0b007a;
+        public static final int AIG_city=0x7f0b0074;
+        public static final int AIG_cnpj=0x7f0b0066;
+        public static final int AIG_conf_pass=0x7f0b006e;
+        public static final int AIG_country=0x7f0b0070;
+        public static final int AIG_edit_apartment=0x7f0b007b;
+        public static final int AIG_edit_city=0x7f0b0075;
+        public static final int AIG_edit_cnpj=0x7f0b0067;
+        public static final int AIG_edit_conf_pass=0x7f0b006f;
+        public static final int AIG_edit_country=0x7f0b0071;
+        public static final int AIG_edit_email=0x7f0b006b;
+        public static final int AIG_edit_name=0x7f0b0065;
+        public static final int AIG_edit_number=0x7f0b0079;
+        public static final int AIG_edit_password=0x7f0b006d;
+        public static final int AIG_edit_phone=0x7f0b0069;
+        public static final int AIG_edit_state=0x7f0b0073;
+        public static final int AIG_edit_street=0x7f0b0077;
+        public static final int AIG_email=0x7f0b006a;
+        public static final int AIG_items=0x7f0b007c;
+        public static final int AIG_name=0x7f0b0064;
+        public static final int AIG_number=0x7f0b0078;
+        public static final int AIG_password=0x7f0b006c;
+        public static final int AIG_phone=0x7f0b0068;
         public static final int AIG_search=0x7f0b0083;
-        public static final int AIG_state=0x7f0b0071;
-        public static final int AIG_street=0x7f0b0075;
-        public static final int AIG_submit=0x7f0b007c;
+        public static final int AIG_state=0x7f0b0072;
+        public static final int AIG_street=0x7f0b0076;
+        public static final int AIG_submit=0x7f0b007d;
         public static final int action_add=0x7f0b0085;
         public static final int action_bar=0x7f0b0045;
         public static final int action_bar_activity_content=0x7f0b0000;
@@ -1760,7 +1762,7 @@ containing a value of this type.
         public static final int checkbox=0x7f0b003d;
         public static final int classic=0x7f0b002f;
         public static final int collapseActionView=0x7f0b001c;
-        public static final int container=0x7f0b007d;
+        public static final int container=0x7f0b007e;
         public static final int decor_content_parent=0x7f0b0043;
         public static final int default_activity_button=0x7f0b0038;
         public static final int dialog=0x7f0b0020;
@@ -1787,9 +1789,8 @@ containing a value of this type.
         public static final int latitude=0x7f0b0059;
         public static final int listMode=0x7f0b0009;
         public static final int list_item=0x7f0b0039;
-        public static final int list_item_id=0x7f0b0080;
-        public static final int list_item_image=0x7f0b007f;
-        public static final int list_item_text=0x7f0b007e;
+        public static final int list_item_image=0x7f0b0080;
+        public static final int list_item_text=0x7f0b007f;
         public static final int location=0x7f0b0058;
         public static final int longitude=0x7f0b005a;
         public static final int match_parent=0x7f0b002a;
@@ -1822,7 +1823,7 @@ containing a value of this type.
         public static final int showTitle=0x7f0b0011;
         public static final int split_action_bar=0x7f0b0007;
         public static final int strict_sandbox=0x7f0b0027;
-        public static final int submit=0x7f0b005b;
+        public static final int submit=0x7f0b005c;
         public static final int submit_area=0x7f0b0050;
         public static final int tabMode=0x7f0b000b;
         public static final int terrain=0x7f0b001a;
@@ -1942,10 +1943,7 @@ containing a value of this type.
         public static final int erro=0x7f0d003c;
         public static final int google_maps_key=0x7f0d003d;
         /** 
-
-    TODO: Before you run your application, you need a Google Maps API key.
-
-    To get one, follow this link, follow the directions and press "Create" at the end:
+   To get one, follow this link, follow the directions and press "Create" at the end:
 
 https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=66:3F:6E:65:9B:CF:AD:F5:D9:41:43:0D:1F:3B:34:CB:0C:74:63:5F%3Bdoacao.doacao2
 

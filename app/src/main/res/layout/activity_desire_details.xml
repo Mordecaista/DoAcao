@@ -1,3 +1,5 @@
+<!--TODO: Need to find a good layout for this activity-->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +11,7 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignBottom="@+id/ADD_amp"
+        android:layout_alignBottom="@+id/ADD_location"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
 
@@ -43,12 +45,16 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/ADD_phone" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/location"/>
+
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ADD_location"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignBottom="@+id/ADD_map"
+        android:text="@string/location"/>
 
     <fragment
         android:id="@+id/ADD_map"

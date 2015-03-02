@@ -40,7 +40,7 @@ public class DesireSearchResultActivity extends ActionBarActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
                         Intent intent = new Intent(mContext,DesireDetailsActivity.class);
-                        intent.putExtra("objectId",((TextView)list.findViewById(R.id.list_item_id)).getText());
+                        intent.putExtra("objectId",list.getTag().toString());
                         startActivity(intent);
                     }
                 });
