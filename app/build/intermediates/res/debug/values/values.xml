@@ -293,6 +293,7 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="passwordConfirmation">Confirmação de Senha</string>
     <string name="search">search</string>
     <string name="searchDesires">Procurar Doadores</string>
+    <string name="searchForInstitutions">Procure por Instituições</string>
     <string name="searchHere">Pesquise aqui</string>
     <string name="state">Estado</string>
     <!-- From: file:/C:/develop/DoAcao2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
@@ -306,6 +307,7 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="title_activity_desire_details">DesireDetailsActivity</string>
     <string name="title_activity_desire_search_result">DesireSearchResultActivity</string>
     <string name="title_activity_institution_register">Cadastrar Nova Instituição</string>
+    <string name="title_activity_institution_search_result">InstitutionSearchResultActivity</string>
     <string name="title_activity_maps">Map</string>
     <!-- From: file:/C:/develop/DoAcao2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_strings.xml -->
     <eat-comment/>

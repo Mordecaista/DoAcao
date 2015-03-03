@@ -42,6 +42,8 @@
     <string name="desireSearch">Pesquisa de Doadores</string>
     <string name="title_activity_desire_details">DesireDetailsActivity</string>
     <string name="wantsToDonate">Deseja Doar</string>
+    <string name="searchForInstitutions">Procure por Instituições</string>
+    <string name="title_activity_institution_search_result">InstitutionSearchResultActivity</string>
 
 
 </resources>

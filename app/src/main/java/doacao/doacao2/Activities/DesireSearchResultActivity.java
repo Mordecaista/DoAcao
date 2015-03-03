@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -40,7 +39,7 @@ public class DesireSearchResultActivity extends ActionBarActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
                         Intent intent = new Intent(mContext,DesireDetailsActivity.class);
-                        intent.putExtra("objectId",list.getTag().toString());
+                        intent.putExtra("objectId",view.getTag().toString());
                         startActivity(intent);
                     }
                 });
@@ -68,12 +67,16 @@ public class DesireSearchResultActivity extends ActionBarActivity {
         handleIntent(intent);
     }
 
+    private void handleIntent(Intent intent) {
+
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            ListArrayAdapter adapter = new ListArrayAdapter(this, searchDesires(intent.getStringExtra(SearchManager.QUERY)));
+            list.setAdapter(adapter);
+        }
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -84,18 +87,17 @@ public class DesireSearchResultActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public ArrayList<ArrayList<String>> searchInstitutions(String criteria){
+    public ArrayList<ArrayList<String>> searchDesires(String criteria){
         ArrayList<ArrayList<String>> array = new ArrayList<ArrayList<String>>();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Desire");
         if(criteria != null){
-            query.whereEqualTo("phone",criteria);
+            query.whereEqualTo("phone",criteria); //TODO:Change this criteria for a real one
         }
         try {
             List<ParseObject> results = query.find();
             for (int i = 0; i < results.size() && i < 100; i++) {
                 ArrayList<String> temp = new ArrayList<String>();
-                //temp.add(((Desire) results.get(i)).getUsername() + ((Desire) results.get(i)).getCreatedAt().toString());
-                temp.add(((Desire) results.get(i)).getCreatedAt().toString());
+                temp.add(((Desire) results.get(i)).getUsername());
                 temp.add(((Desire) results.get(i)).getObjectId().toString());
                 array.add(temp);
             }
@@ -104,13 +106,5 @@ public class DesireSearchResultActivity extends ActionBarActivity {
             return array;
         }
         return array;
-    }
-
-    private void handleIntent(Intent intent) {
-
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            ListArrayAdapter adapter = new ListArrayAdapter(this, searchInstitutions(intent.getStringExtra(SearchManager.QUERY)));
-            list.setAdapter(adapter);
-        }
     }
 }

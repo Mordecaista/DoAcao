@@ -18,14 +18,18 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import java.util.HashMap;
 import java.util.List;
 
+import doacao.doacao2.ListArrayAdapter;
 import doacao.doacao2.Objects.Institution;
 import doacao.doacao2.R;
 
@@ -35,16 +39,19 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     private GoogleMap map;
     private Location mLastLocation;
     private GoogleApiClient mGoogleApiClient;
+    private HashMap<String,Marker> markers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        markers = new HashMap<String,Marker>();
+
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.container);
         mapFragment.getMapAsync(this);
 
-        //buildGoogleApiClient();
+        buildGoogleApiClient();
     }
 
 
@@ -89,6 +96,17 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         loadInstitutions();
     }
 
+    @Override
+    public void onNewIntent(Intent intent) {
+        setIntent(intent);
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+        markers.get(intent.getStringExtra("objectId")).showInfoWindow();
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(markers.get(intent.getStringExtra("objectId")).getPosition(),13));
+    }
+
     public void loadInstitutions(){
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Institution");
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -96,15 +114,17 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
             public void done(List<ParseObject> parseObjects, ParseException e) {
                 if(e==null){
                     for(int i = 0; i < parseObjects.size(); i++){
-                        LatLng location = new LatLng(parseObjects.get(i).getDouble("latitude"),parseObjects.get(i).getDouble("longitude"));
-                        map.addMarker(new MarkerOptions()
+                        ParseGeoPoint geopoint = ((Institution) parseObjects.get(i)).getLocation();
+                        LatLng location = new LatLng(geopoint.getLatitude(),geopoint.getLongitude());
+                        Marker marker = map.addMarker(new MarkerOptions()
                                 .title(((Institution)parseObjects.get(i)).getName())
                                 .snippet(((Institution)parseObjects.get(i)).getItems().get(0))//TODO: Fix this to get the whole list formatted correctly
                                 .position(location));
+                        markers.put(((Institution) parseObjects.get(i)).getObjectId(),marker);
                     }
                 }
                 else{
-                    //TODO:something here?
+                    //TODO:something here? Guess not
                 }
             }
         });

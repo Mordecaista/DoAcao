@@ -65,7 +65,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity {
             items.add(mItems.getSelectedItem().toString());
             ArrayList<Double> geopoint = getLocationFromAddress(number+" "+street+", "+city+", "+state+", "+country);
 
-            Institution institution = new Institution(name, cnpj, email, password, country, state, street, number, apartment,geopoint.get(0), geopoint.get(1), items, phone);
+            Institution institution = new Institution(name, cnpj, email, password, country, state, city, street, number, apartment,geopoint.get(0), geopoint.get(1), items, phone);
             institution.saveInBackground(new SaveCallback(){
                 @Override
                 public void done(ParseException e) {

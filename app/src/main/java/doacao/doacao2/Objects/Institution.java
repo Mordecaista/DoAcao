@@ -21,12 +21,13 @@ public class Institution extends ParseObject{
 
     }
 
-    public Institution(String name, int cnpj, String email, String password, String country, String state, String street, int number, String apartment,
+    public Institution(String name, int cnpj, String email, String password, String country, String state, String city, String street, int number, String apartment,
                        double latitude, double longitude, ArrayList<String> items, int phone){
         put("name",name);
         put("cnpj",cnpj);
         put("country",country);
         put("state",state);
+        put("city",city);
         put("street",street);
         put("number",number);
         put("apartment",apartment);
@@ -67,6 +68,9 @@ public class Institution extends ParseObject{
     public String getState(){
         return getString("state");
     }
+    public String getCity(){
+        return getString("city");
+    }
     public String getStreet(){
         return getString("street");
     }
@@ -106,6 +110,9 @@ public class Institution extends ParseObject{
     }
     public void setState(String state){
         put("state",state);
+    }
+    public void setCity(String city){
+        put("city",city);
     }
     public void setStreet(String street){
         put("street",street);

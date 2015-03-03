@@ -35,8 +35,8 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
 
     private EditText mEmail;
     private EditText mPhone;
-    private EditText mLatitude;
-    private EditText mLongitude;
+//    private EditText mLatitude;
+//    private EditText mLongitude;
     private Spinner mItems;
     private Button mSubmit;
     private Context mContext;
@@ -52,8 +52,8 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
         mContext = this;
         mEmail = (EditText)findViewById(R.id.edit_email);
         mPhone = (EditText)findViewById(R.id.edit_phone);
-        mLatitude = (EditText)findViewById(R.id.latitude);
-        mLongitude = (EditText)findViewById(R.id.longitude);
+//        mLatitude = (EditText)findViewById(R.id.latitude);
+//        mLongitude = (EditText)findViewById(R.id.longitude);
         mItems = (Spinner)findViewById(R.id.items);
         mSubmit = (Button)findViewById(R.id.submit);
         mSubmit.setOnClickListener(mOnSubmitClickListener);
@@ -115,11 +115,32 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
         map.getUiSettings().setMyLocationButtonEnabled(true);
         map.getUiSettings().setZoomControlsEnabled(true);
         map.getUiSettings().setAllGesturesEnabled(true);
+        map.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
+            @Override
+            public void onMarkerDragStart(Marker marker) {
+                //STUB
+            }
+
+            @Override
+            public void onMarkerDrag(Marker marker) {
+                //STUB
+            }
+
+            @Override
+            public void onMarkerDragEnd(Marker marker) {
+                //STUB
+            }
+        });
         if(mLastLocation != null) {
             LatLng position = new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 13));
             loc = map.addMarker(new MarkerOptions()
                     .position(position)
+                    .draggable(true));
+        }
+        else{
+            loc = map.addMarker(new MarkerOptions()
+                    .position(new LatLng(0.0, 0.0))
                     .draggable(true));
         }
     }

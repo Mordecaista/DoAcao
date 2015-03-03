@@ -23,22 +23,30 @@
         <uses-library android:name="com.google.android.maps" />
 
         <meta-data
-            android:name="android.app.default_searchable"
-            android:value=".Activities.DesireSearchResultActivity" />
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
 
         <activity
             android:name=".Activities.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:launchMode="singleInstance">
 
-             <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
-                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
             <meta-data
                 android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
+                android:resource="@xml/searchable_main" />
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".Activities.InstitutionSearchResultActivity" />
         </activity>
+
         <activity
             android:name=".Activities.AddDesireActivity"
             android:label="@string/title_activity_add_desire"
@@ -48,36 +56,29 @@
                 android:value=".Activities.MainActivity" />
         </activity>
 
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="@string/google_maps_key" />
-
         <activity
             android:name=".Activities.InstitutionRegisterActivity"
             android:label="@string/title_activity_institution_register" >
 
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+             <!--<intent-filter>-->
+             <!--<action android:name="android.intent.action.MAIN" />-->
+             <!--<category android:name="android.intent.category.LAUNCHER" />-->
+             <!--</intent-filter>-->
 
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".Activities.DesireSearchResultActivity" />
         </activity>
+
         <activity
             android:name=".Activities.DesireSearchResultActivity"
             android:label="@string/desireSearch"
             android:launchMode="singleTop" >
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-            <intent-filter>
+             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
             <intent-filter>
@@ -87,12 +88,34 @@
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".Activities.DesireSearchResultActivity" />
         </activity>
+
         <activity
             android:name=".Activities.DesireDetailsActivity"
             android:label="@string/title_activity_desire_details" >
         </activity>
 
+        <activity
+            android:name=".Activities.InstitutionSearchResultActivity"
+            android:label="@string/title_activity_institution_search_result"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable_main" />
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".Activities.InstitutionSearchResultActivity" />
+
+        </activity>
     </application>
 
 </manifest>

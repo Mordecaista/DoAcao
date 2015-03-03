@@ -66,17 +66,17 @@
         android:text="@string/location"
         android:id="@+id/location" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/latitude"
-        android:hint="latitude"/>
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/latitude"-->
+        <!--android:hint="latitude"/>-->
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/longitude"
-        android:hint="longitude"/>
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/longitude"-->
+        <!--android:hint="longitude"/>-->
 
     <fragment
         android:id="@+id/AAD_map"
