@@ -21,7 +21,7 @@ public class Institution extends ParseObject{
 
     }
 
-    public Institution(String name, int cnpj, String email, String password, String country, String state, String city, String street, int number, String apartment,
+    public Institution(String name, int cnpj, String country, String state, String city, String street, int number, String apartment,
                        double latitude, double longitude, ArrayList<String> items, int phone){
         put("name",name);
         put("cnpj",cnpj);
@@ -39,21 +39,22 @@ public class Institution extends ParseObject{
 
         ParseGeoPoint geoPoint = new ParseGeoPoint(latitude,longitude);
         put("location",geoPoint);
+        ParseUser user = ParseUser.getCurrentUser();
+        put("userId",user.getObjectId());
 
-        if(ParseUser.getCurrentUser() == null) {
-            ParseUser user = new ParseUser();
-            user.setUsername(name);
-            user.setPassword(password);
-            user.setEmail(email);
-            try {
-                user.signUp();
-                put("user",user);
-            }
-            catch (ParseException e){
-                Log.e("DOACAO2",e.toString());
-                e.printStackTrace();
-            }
-        }
+//        ParseUser user = new ParseUser();
+//        user.setUsername(name);
+//        user.setPassword(password);
+//        user.setEmail(email);
+//        try {
+//            user.signUp();
+//            ParseUser current = ParseUser.getCurrentUser();
+//            put("userId",user.getObjectId());
+//        }
+//        catch (ParseException e){
+//            Log.d("DOACAO2",e.toString());
+//            e.printStackTrace();
+//        }
     }
 
     public String getName(){
@@ -96,8 +97,8 @@ public class Institution extends ParseObject{
                 return items;
             }
     }
-    public double getPhone(){
-        return getDouble("phone");
+    public int getPhone(){
+        return getInt("phone");
     }
     public void setName(String name){
         put("name",name);
@@ -132,7 +133,7 @@ public class Institution extends ParseObject{
         for(String n : items) myArray.put(n);
         put("items",myArray);
     }
-    public void setLongitude(int phone){
-        put("phone",phone);
+    public void setPhone(int phone){
+        put("number",phone);
     }
 }

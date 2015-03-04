@@ -17,7 +17,9 @@ import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import doacao.doacao2.Objects.Desire;
@@ -26,6 +28,7 @@ import doacao.doacao2.R;
 public class DesireDetailsActivity extends ActionBarActivity implements OnMapReadyCallback {
 
     private Desire desire;
+    private GoogleMap map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,7 @@ public class DesireDetailsActivity extends ActionBarActivity implements OnMapRea
 
         desire = searchDesire(intent.getStringExtra("objectId"));
         user.setText(desire.getUsername());
-        items.setText(formatItems(desire.getItem()));
+        items.setText(formatItems(desire.getItems()));
         email.setText(desire.getEmail());
         phone.setText(desire.getPhone());
 
@@ -47,8 +50,12 @@ public class DesireDetailsActivity extends ActionBarActivity implements OnMapRea
         mapFragment.getMapAsync(this);
     }
 
-    private String formatItems(String item) {
-        return "-"+item;
+    private String formatItems(ArrayList<String> items) {
+        String text = "";
+        for(String n : items){
+            text += "-"+n+"\n";
+        }
+        return text;
     }
 
     public Desire searchDesire(String objectId) {
@@ -81,8 +88,9 @@ public class DesireDetailsActivity extends ActionBarActivity implements OnMapRea
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.ADD_logout) {
+            ParseUser.logOut();
+            finish(); //TODO:Return to institution login page
         }
 
         return super.onOptionsItemSelected(item);
@@ -90,12 +98,16 @@ public class DesireDetailsActivity extends ActionBarActivity implements OnMapRea
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        this.map = googleMap;
+        map.setMyLocationEnabled(true);
+        map.getUiSettings().setMyLocationButtonEnabled(true);
+        map.getUiSettings().setZoomControlsEnabled(true);
+        map.getUiSettings().setAllGesturesEnabled(true);
         ParseGeoPoint geoPoint = desire.getLocation();
         LatLng position = new LatLng(geoPoint.getLatitude(), geoPoint.getLongitude());
-
-        googleMap.setMyLocationEnabled(true);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 13));
-        googleMap.addCircle(new CircleOptions()
+        map.setMyLocationEnabled(true);
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 13));
+        map.addCircle(new CircleOptions()
                 .center(position)
                 .radius(300)
                 .strokeColor(0x7F0000FF)

@@ -193,9 +193,6 @@
     <!-- From: file:/C:/develop/DoAcao2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/version.xml -->
     <eat-comment/>
     <integer name="google_play_services_version">6587000</integer>
-    <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
-    <eat-comment/>
-    <string name="Phone">Telefone</string>
     <!-- From: file:/C:/develop/DoAcao2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
@@ -222,10 +219,10 @@
     <string name="action_settings">Settings</string>
     <string name="add">Adicionar</string>
     <string name="apartment">Complemento</string>
-    <string name="app_name">DoAcao2</string>
-    <string name="cadastrar">Cadastrar</string>
+    <string name="app_name">DoAção</string>
+    <string name="approximate_location_label">Localização Aproximada:</string>
     <string name="cadastrar_desejo_doacao">Cadastrar Desejo de Doação</string>
-    <string name="cadatrado_com_sucesso">Cadastrado com Sucesso!</string>
+    <string name="cant_save_user">Não foi possível alterar os dados de email e senha, tente novamente mais tarde.</string>
     <string name="city">Cidade</string>
     <string name="cnpj">CNPJ</string>
     <!-- From: file:/C:/develop/DoAcao2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/common_strings.xml -->
@@ -267,7 +264,9 @@
     <eat-comment/>
     <string name="desireSearch">Pesquisa de Doadores</string>
     <string name="email">Email</string>
-    <string name="erro">Erro. Tente Novamente!</string>
+    <string name="email_label">Email:</string>
+    <string name="error">Erro. Tente Novamente!</string>
+    <string name="fill_to_update">Preencha para atualizar</string>
     <!-- From: file:/C:/develop/DoAcao2/app/src/debug/res/values/google_maps_api.xml -->
     <eat-comment/>
     <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyDo-6VUfKvfVsG-qxqNUOzxOZBODWqY6Zg</string>
@@ -284,17 +283,22 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     --></string>
     <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="invalid_email">Email inválido. Favor digitar novamente.</string>
     <string name="location">Localização</string>
+    <string name="logout">Logout</string>
     <string name="name">Nome</string>
+    <string name="no_items">Favor selecione pelo menos um item.</string>
     <string name="number">Numero</string>
     <string name="password">Senha</string>
-    <string name="passwordConfirmation">Confirmação de Senha</string>
+    <string name="passwordConfirmation">Confirmação</string>
+    <string name="password_doesnt_match">Senha não está de acordo com a conferência, favor digitar novamente.</string>
+    <string name="phone">Telefone</string>
+    <string name="phone_label">Telefone:</string>
     <string name="search">search</string>
     <string name="searchDesires">Procurar Doadores</string>
     <string name="searchForInstitutions">Procure por Instituições</string>
     <string name="searchHere">Pesquise aqui</string>
+    <string name="selectItems">Selecione os Itens</string>
     <string name="state">Estado</string>
     <!-- From: file:/C:/develop/DoAcao2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
     <eat-comment/>
@@ -303,6 +307,8 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="street">Rua</string>
+    <string name="submit">Cadastrar</string>
+    <string name="submitted_with_success">Cadastrado com Sucesso!</string>
     <string name="title_activity_add_desire">AddDesireActivity</string>
     <string name="title_activity_desire_details">DesireDetailsActivity</string>
     <string name="title_activity_desire_search_result">DesireSearchResultActivity</string>
@@ -314,7 +320,7 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>
     <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="wantsToDonate">Deseja Doar</string>
+    <string name="wants_to_donate_label">Deseja Doar:</string>
     <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">

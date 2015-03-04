@@ -1,16 +1,15 @@
 package doacao.doacao2.Activities;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.location.Location;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -20,30 +19,34 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.parse.ParseException;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import doacao.doacao2.MultiSpinner;
 import doacao.doacao2.Objects.Desire;
 import doacao.doacao2.R;
 
 
-public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, MultiSpinner.MultiSpinnerListener{
 
     private EditText mEmail;
     private EditText mPhone;
-//    private EditText mLatitude;
-//    private EditText mLongitude;
-    private Spinner mItems;
+    private MultiSpinner mItems;
     private Button mSubmit;
     private Context mContext;
     private GoogleApiClient mGoogleApiClient;
     private GoogleMap map;
     private Location mLastLocation;
     private Marker loc;
+    private ArrayList<String> items;
+    private String[] possibleItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,17 +55,16 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
         mContext = this;
         mEmail = (EditText)findViewById(R.id.edit_email);
         mPhone = (EditText)findViewById(R.id.edit_phone);
-//        mLatitude = (EditText)findViewById(R.id.latitude);
-//        mLongitude = (EditText)findViewById(R.id.longitude);
-        mItems = (Spinner)findViewById(R.id.items);
+        mItems = (MultiSpinner)findViewById(R.id.items);
         mSubmit = (Button)findViewById(R.id.submit);
         mSubmit.setOnClickListener(mOnSubmitClickListener);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.items,android.R.layout.simple_spinner_item);
-        mItems.setAdapter(adapter);
-
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.AAD_map);
         mapFragment.getMapAsync(this);
+
+        Resources res = getResources();
+        possibleItems = res.getStringArray(R.array.items);
+        mItems.setItems(Arrays.asList(possibleItems), getString(R.string.selectItems), this);
 
         buildGoogleApiClient();
     }
@@ -72,20 +74,17 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
         public void onClick(View v){
             String email = mEmail.getText().toString();
             String phone = mPhone.getText().toString();
-            //double latitude = Double.parseDouble(mLatitude.getText().toString());
-            //double longitude = Double.parseDouble(mLongitude.getText().toString());
             LatLng aux = loc.getPosition();
-            String item = mItems.getSelectedItem().toString();
-            Desire desire = new Desire(email,phone,aux.latitude,aux.longitude,item);
+            Desire desire = new Desire(email,phone,aux.latitude,aux.longitude,items);
             desire.saveInBackground(new SaveCallback(){
                 @Override
                 public void done(ParseException e) {
                     if(e == null){
-                        Toast.makeText(mContext,getString(R.string.cadatrado_com_sucesso),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext,getString(R.string.submitted_with_success),Toast.LENGTH_SHORT).show();
                         finish();
                     }
                     else{
-                        Toast.makeText(mContext,getString(R.string.erro),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext,getString(R.string.error),Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -101,8 +100,9 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.AIS_logout) {
+            ParseUser.logOut();
+            finish(); //TODO:Return to user login page
         }
 
         return super.onOptionsItemSelected(item);
@@ -175,5 +175,14 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
 
+    }
+
+    @Override
+    public void onItemsSelected(boolean[] selected) {
+        ArrayList<String> aux = new ArrayList<String>();
+        for(int i = 0; i < selected.length; i++){
+            if(selected[i]) aux.add(possibleItems[i]);
+        }
+        this.items = aux;
     }
 }

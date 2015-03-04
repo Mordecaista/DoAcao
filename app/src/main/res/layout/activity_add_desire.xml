@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -15,7 +16,7 @@
         android:textSize="25dp"
         android:textStyle="bold"/>
 
-    <Spinner
+    <doacao.doacao2.MultiSpinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/items" />
@@ -48,7 +49,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Phone"
+            android:text="@string/phone"
             android:id="@+id/phone" />
 
         <EditText
@@ -66,18 +67,6 @@
         android:text="@string/location"
         android:id="@+id/location" />
 
-    <!--<EditText-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/latitude"-->
-        <!--android:hint="latitude"/>-->
-
-    <!--<EditText-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/longitude"-->
-        <!--android:hint="longitude"/>-->
-
     <fragment
         android:id="@+id/AAD_map"
         android:layout_width="match_parent"
@@ -89,7 +78,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cadastrar"
+        android:text="@string/submit"
         android:id="@+id/submit"
         android:padding="20dp"/>
 </LinearLayout>

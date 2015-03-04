@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,8 +81,9 @@ public class DesireSearchResultActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.ADS_logout) {
+            ParseUser.logOut();
+            finish(); //TODO:Return to institution login page
         }
 
         return super.onOptionsItemSelected(item);

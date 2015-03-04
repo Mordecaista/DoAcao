@@ -11,6 +11,10 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,10 +25,10 @@ public class Desire extends ParseObject {
 
     }
 
-    public Desire(String email, String phone, double latitude, double longitude, String item){
+    public Desire(String email, String phone, double latitude, double longitude, ArrayList<String> items){
         put("email",email);
         put("phone",phone);
-        put("item",item);
+        addAllUnique("items", items);
 
         ParseGeoPoint geoPoint = new ParseGeoPoint(latitude,longitude);
         put("location",geoPoint);
@@ -41,8 +45,14 @@ public class Desire extends ParseObject {
     public ParseGeoPoint getLocation(){
         return getParseGeoPoint("location");
     }
-    public String getItem(){
-        return getString("item");
+    public ArrayList<String> getItems(){
+        ArrayList<String> result = new ArrayList<String>();
+        JSONArray list = getJSONArray("items");
+        for(int i = 0; i <list.length();i++){
+            try{result.add(list.get(i).toString());}
+            catch (JSONException e){}
+        }
+        return result;
     }
     public void setEmail(String email){
         put("email",email);
@@ -54,8 +64,8 @@ public class Desire extends ParseObject {
         ParseGeoPoint geoPoint = new ParseGeoPoint(latitude,longitude);
         put("location",geoPoint);
     }
-    public void setItem(String item){
-        put("item",item);
+    public void setItems(ArrayList<String> items){
+        addAllUnique("items", items);
     }
     public String getUsername(){
         String aux = "";

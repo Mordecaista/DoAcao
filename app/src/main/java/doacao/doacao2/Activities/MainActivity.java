@@ -25,6 +25,7 @@ import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.HashMap;
 import java.util.List;
@@ -77,6 +78,10 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
             Intent intent = new Intent(this,AddDesireActivity.class);
             startActivity(intent);
             return true;
+        }
+        else if (id == R.id.action_logout) {
+            ParseUser.logOut();
+            finish(); //TODO:Return to user login page
         }
 
         return super.onOptionsItemSelected(item);
