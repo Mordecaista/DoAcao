@@ -52,6 +52,11 @@
     <string name="fill_to_update">Preencha para atualizar</string>
     <string name="cant_save_user">Não foi possível alterar os dados de email e senha, tente novamente mais tarde.</string>
     <string name="logout">Logout</string>
+    <string name="title_activity_institution_login">InstitutionLoginActivity</string>
+    <string name="im_not_an_institution">Não sou uma instituição!</string>
+    <string name="login_or_signup">Entrar ou Cadastrar</string>
+    <string name="institution_login">Login de Instituições</string>
+    <string name="error_login">Não foi possível completar seu login, tente novamente!</string>
 
 
 </resources>

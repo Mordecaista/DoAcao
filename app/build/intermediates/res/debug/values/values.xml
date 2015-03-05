@@ -217,6 +217,12 @@
     <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
+    <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings_activity_institution_login.xml -->
+    <eat-comment/>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
     <string name="add">Adicionar</string>
     <string name="apartment">Complemento</string>
     <string name="app_name">DoAção</string>
@@ -266,6 +272,14 @@
     <string name="email">Email</string>
     <string name="email_label">Email:</string>
     <string name="error">Erro. Tente Novamente!</string>
+    <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings_activity_institution_login.xml -->
+    <eat-comment/>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
     <string name="fill_to_update">Preencha para atualizar</string>
     <!-- From: file:/C:/develop/DoAcao2/app/src/debug/res/values/google_maps_api.xml -->
     <eat-comment/>
@@ -294,6 +308,12 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="password_doesnt_match">Senha não está de acordo com a conferência, favor digitar novamente.</string>
     <string name="phone">Telefone</string>
     <string name="phone_label">Telefone:</string>
+    <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings_activity_institution_login.xml -->
+    <eat-comment/>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
     <string name="search">search</string>
     <string name="searchDesires">Procurar Doadores</string>
     <string name="searchForInstitutions">Procure por Instituições</string>
@@ -312,6 +332,11 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="title_activity_add_desire">AddDesireActivity</string>
     <string name="title_activity_desire_details">DesireDetailsActivity</string>
     <string name="title_activity_desire_search_result">DesireSearchResultActivity</string>
+    <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings_activity_institution_login.xml -->
+    <eat-comment/>
+    <string name="title_activity_institution_login">Sign in</string>
+    <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
     <string name="title_activity_institution_register">Cadastrar Nova Instituição</string>
     <string name="title_activity_institution_search_result">InstitutionSearchResultActivity</string>
     <string name="title_activity_maps">Map</string>

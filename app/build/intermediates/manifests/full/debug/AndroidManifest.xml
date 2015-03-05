@@ -20,6 +20,11 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:name="doacao.doacao2.DoacaoApplication"
         android:allowBackup="true"
@@ -115,6 +120,11 @@
             <meta-data
                 android:name="android.app.default_searchable"
                 android:value=".Activities.InstitutionSearchResultActivity" />
+        </activity>
+        <activity
+            android:name="doacao.doacao2.InstitutionLoginActivity"
+            android:label="@string/title_activity_institution_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
     </application>
 
