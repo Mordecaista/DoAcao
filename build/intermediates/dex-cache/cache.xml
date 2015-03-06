@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="C:\develop\DoAcao2\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\3.21.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0285ad8da812e92dda76ed5d0dcba05724c7911d">
+        <dex dex="C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\classes-65a2fb9b679253835a19f0cb8a56a7f2d2f75e2c.jar" />
+    </item>
+    <item
         jar="C:\develop\DoAcao2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -30,18 +37,11 @@
         <dex dex="C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-374258312780c521575c3324a0124cc81e40913d.jar" />
     </item>
     <item
-        jar="C:\develop\DoAcao2\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jar="C:\Users\Alexandre\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-6f52ddc2fe7eb370c21f4abdffeaa5ff41504848.jar" />
-    </item>
-    <item
-        jar="C:\develop\DoAcao2\app\libs\bolts-android-1.1.4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="129874135e6081269ace2312092031558865de12">
-        <dex dex="C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-08733e12e5d8867ad289e07c375a17ad19724671.jar" />
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-58b4bf46c48f6db49b5fbda6b2b809125c38b88b.jar" />
     </item>
     <item
         jar="C:\develop\DoAcao2\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
@@ -49,6 +49,13 @@
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
         <dex dex="C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\classes-f0328c8408827e97a8d1fc953e518d16dba8a636.jar" />
+    </item>
+    <item
+        jar="C:\develop\DoAcao2\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-6f52ddc2fe7eb370c21f4abdffeaa5ff41504848.jar" />
     </item>
 
 </items>

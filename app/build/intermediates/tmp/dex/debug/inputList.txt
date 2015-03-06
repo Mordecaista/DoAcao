@@ -1,8 +1,9 @@
 C:\develop\DoAcao2\app\build\intermediates\classes\debug
 C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-374258312780c521575c3324a0124cc81e40913d.jar
-C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-08733e12e5d8867ad289e07c375a17ad19724671.jar
+C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-58b4bf46c48f6db49b5fbda6b2b809125c38b88b.jar
 C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-6f52ddc2fe7eb370c21f4abdffeaa5ff41504848.jar
 C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\classes-78d149ef0c7a51ed67fa0527ff272029e35e7c1c.jar
+C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\classes-65a2fb9b679253835a19f0cb8a56a7f2d2f75e2c.jar
 C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\Parse-1.8.2-ac735fcc1148c9e4d56dbaf27d8655029f395fc8.jar
 C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\classes-f0328c8408827e97a8d1fc953e518d16dba8a636.jar
 C:\develop\DoAcao2\app\build\intermediates\pre-dexed\debug\classes-3cc5bbd6a59cc096cfd4a59518e7bf0ad7c9a68c.jar

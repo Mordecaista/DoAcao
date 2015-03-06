@@ -33,16 +33,17 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
 
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleInstance" >
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
 
             <meta-data
                 android:name="android.app.searchable"
@@ -62,11 +63,10 @@
         <activity
             android:name=".Activities.InstitutionRegisterActivity"
             android:label="@string/title_activity_institution_register" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
 
             <meta-data
                 android:name="android.app.searchable"
@@ -116,14 +116,14 @@
                 android:value=".Activities.InstitutionSearchResultActivity" />
         </activity>
         <activity
-            android:name=".InstitutionLoginActivity"
-            android:label="@string/title_activity_institution_login"
-            android:windowSoftInputMode="adjustResize|stateVisible" >
-        </activity>
-        <activity
-            android:name=".Activities.InstitutionLoginActivity"
+            android:name=".Activities.LoginActivity"
             android:label="@string/title_activity_institution_login" >
         </activity>
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
     </application>
 
 </manifest>

@@ -31,12 +31,12 @@ public class DoacaoApplication extends Application{
             user.signUp();
             ParseUser current = ParseUser.getCurrentUser();
         }*/
-        try{
-            ParseUser.logIn("@a.com","@a.com");
+       /*try{
+            ParseUser.logIn("1@a.com","1@a.com");
         }
         catch (ParseException e){
             e.printStackTrace();
-        }
+        }*/
 
     }
 }
