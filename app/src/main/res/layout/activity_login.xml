@@ -25,13 +25,21 @@
             android:id="@+id/AL_user"
             android:textStyle="bold" />
 
-        <com.facebook.widget.LoginButton
-            android:id="@+id/AL_faceButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <!--<com.facebook.widget.LoginButton-->
+            <!--android:id="@+id/AL_faceButton"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--/>-->
+
+        <Button
+            android:layout_width="242dp"
+            android:layout_height="41dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
-            />
+            android:id="@+id/AL_faceButton"
+            android:background="@drawable/fblogin"/>
 
     </LinearLayout>
 
@@ -65,6 +73,14 @@
             android:inputType="textPassword"
             android:id="@+id/AL_pass"
             android:hint="@string/password"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:id="@+id/AL_pass_conf"
+            android:hint="@string/passwordConfirmation"
+            android:visibility="invisible"/>
 
         <Button
             android:layout_width="match_parent"

@@ -3,6 +3,7 @@ package doacao.doacao2.Activities;
 import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.location.Address;
 import android.location.Geocoder;
@@ -124,7 +125,9 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
 
         if (id == R.id.AIG_logout) {
             ParseUser.logOut();
-            finish(); //TODO:Return to institution login page
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

@@ -90,7 +90,9 @@ public class DesireDetailsActivity extends ActionBarActivity implements OnMapRea
         int id = item.getItemId();
         if (id == R.id.ADD_logout) {
             ParseUser.logOut();
-            finish(); //TODO:Return to institution login page
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

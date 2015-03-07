@@ -60,6 +60,9 @@
     <string name="error_login">Não foi possível completar seu login, tente novamente!</string>
     <string name="user_login">Login de Usuário</string>
     <string name="error_face_login">Ocorreu um erro ao logar com o Facebook. Tente novamente!</string>
+    <string name="new_institution_conf_pass">Seja bem vindo ao DoAção! Favor digite a confirmação de senha e confirme.</string>
+    <string name="session_invalid_error">A sua sessão não é mais válida, favor logar novamente</string>
+    <string name="logn_generic_error">Alguma coisa aconteceu errada. Favor tentar novamente.</string>
 
 
 </resources>

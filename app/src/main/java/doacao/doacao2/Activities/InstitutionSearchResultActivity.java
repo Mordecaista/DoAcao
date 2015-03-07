@@ -83,7 +83,9 @@ public class InstitutionSearchResultActivity extends ActionBarActivity {
 
         if (id == R.id.AAD_logout) {
             ParseUser.logOut();
-            finish(); //TODO:Return to user login page
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

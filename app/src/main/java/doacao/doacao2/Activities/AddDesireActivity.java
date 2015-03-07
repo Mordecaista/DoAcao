@@ -1,10 +1,12 @@
 package doacao.doacao2.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.location.Location;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -59,6 +61,13 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
         mSubmit = (Button)findViewById(R.id.submit);
         mSubmit.setOnClickListener(mOnSubmitClickListener);
 
+        mEmail.setText(ParseUser.getCurrentUser().getEmail());
+        TelephonyManager tMgr = (TelephonyManager)mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        String mPhoneNumber = tMgr.getLine1Number();
+        if(mPhoneNumber != null && !mPhoneNumber.equals("")){
+            mPhone.setText(mPhoneNumber);
+        }
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.AAD_map);
         mapFragment.getMapAsync(this);
 
@@ -102,7 +111,9 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
         int id = item.getItemId();
         if (id == R.id.AIS_logout) {
             ParseUser.logOut();
-            finish(); //TODO:Return to user login page
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

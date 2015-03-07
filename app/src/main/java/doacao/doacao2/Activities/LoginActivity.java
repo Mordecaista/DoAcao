@@ -13,6 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.FacebookRequestError;
+import com.facebook.Request;
+import com.facebook.Response;
+import com.facebook.Session;
+import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
@@ -21,14 +26,16 @@ import com.parse.ParseUser;
 
 import java.util.Arrays;
 
+import doacao.doacao2.Objects.User;
 import doacao.doacao2.R;
 
 public class LoginActivity extends ActionBarActivity {
 
     private EditText mEmail;
     private EditText mPassword;
+    private EditText mPasswordConf;
     private Button mLogin;
-    private LoginButton faceButton;
+    private Button faceButton;
     private Context mContext;
     private ActionBarActivity act;
 
@@ -39,17 +46,15 @@ public class LoginActivity extends ActionBarActivity {
         act = this;
         setContentView(R.layout.activity_login);
         if(ParseUser.getCurrentUser() != null){
-            this.finish();
-            Intent intent = new Intent(mContext, InstitutionRegisterActivity.class);
-            startActivity(intent);
+            finishActivity("institution");
         }
         else{
             this.mEmail = (EditText)findViewById(R.id.AL_email);
             this.mPassword = (EditText)findViewById(R.id.AL_pass);
+            this.mPasswordConf = (EditText)findViewById(R.id.AL_pass_conf);
             this.mLogin = (Button)findViewById(R.id.AL_login);
-            mLogin.setOnClickListener(mFaceListener);
-            faceButton = (LoginButton)findViewById(R.id.AL_faceButton);
-            faceButton.setReadPermissions(Arrays.asList("public_profile","email"));
+            mLogin.setOnClickListener(mOnLoginClickListener);
+            faceButton = (Button)findViewById(R.id.AL_faceButton);
             faceButton.setOnClickListener(mFaceListener);
 
         }
@@ -62,23 +67,20 @@ public class LoginActivity extends ActionBarActivity {
         String pass = mPassword.getText().toString();
         try {
             ParseUser.logIn(email,pass);
-            finish();
-            Intent intent = new Intent(mContext, InstitutionRegisterActivity.class);
-            startActivity(intent);
+            finishActivity("institution");
         }
         catch (ParseException e){
-            ParseUser user = new ParseUser();
-            user.setUsername(email);
-            user.setPassword(pass);
-            user.setEmail(email);
-            try {
-                user.signUp();
-                finish();
-                Intent intent = new Intent(mContext, InstitutionRegisterActivity.class);
-                startActivity(intent);
-            }
-            catch (ParseException f){
-                Toast.makeText(mContext,getString(R.string.error_login),Toast.LENGTH_LONG).show();
+            if(validate()) {
+                ParseUser user = new ParseUser();
+                user.setUsername(email);
+                user.setPassword(pass);
+                user.setEmail(email);
+                try {
+                    user.signUp();
+                    finishActivity("institution");
+                } catch (ParseException f) {
+                    Toast.makeText(mContext, getString(R.string.error_login), Toast.LENGTH_LONG).show();
+                }
             }
         }
         }
@@ -95,13 +97,12 @@ public class LoginActivity extends ActionBarActivity {
                     }
                     else {
                         if (user.isNew()) {
-                            Log.d("MyApp", "User signed up and logged in through Facebook!");
-                        } else {
-                            Log.d("MyApp", "User logged in through Facebook!");
+                            String a =
+                            makeRequest();
                         }
-                        Intent intent = new Intent(mContext,MainActivity.class);
-                        startActivity(intent);
-                        finish();
+                        else {
+                            finishActivity("user");
+                        }
                     }
                 }
             });
@@ -121,7 +122,70 @@ public class LoginActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        ParseFacebookUtils.finishAuthentication(requestCode, resultCode, data);
+    }
+
+    private void makeRequest() {
+        Session session = ParseFacebookUtils.getSession();
+        if (session != null && session.isOpened()) {
+            Request request = Request.newMeRequest(
+                    ParseFacebookUtils.getSession(), new Request.GraphUserCallback() {
+                        @Override
+                        public void onCompleted(GraphUser user, Response response) {
+                            if (user != null) {
+                                String name = user.getName();
+                                String email = user.getProperty("email").toString();
+                                ((User) ParseUser.getCurrentUser()).setName(name);
+                                ((User) ParseUser.getCurrentUser()).setEmail(email);
+                                ((User) ParseUser.getCurrentUser()).setUsername(email);
+                                ParseUser.getCurrentUser().saveInBackground();
+                                finishActivity("user");
+                            } else if (response.getError() != null) {
+                                if ((response.getError().getCategory() == FacebookRequestError.Category.AUTHENTICATION_RETRY)
+                                        || (response.getError().getCategory() == FacebookRequestError.Category.AUTHENTICATION_REOPEN_SESSION)) {
+                                    Toast.makeText(getApplicationContext(), R.string.session_invalid_error, Toast.LENGTH_LONG).show();
+
+                                } else {
+                                    Toast.makeText(getApplicationContext(), R.string.logn_generic_error, Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        }
+                    });
+            request.executeAsync();
+        }
+    }
+
+   private void finishActivity(String type){
+       Intent intent = null;
+       switch(type){
+           case "user":
+               intent = new Intent(mContext, MainActivity.class);
+               startActivity(intent);
+               finish();
+               break;
+           case "institution":
+               intent = new Intent(mContext, InstitutionRegisterActivity.class);
+               startActivity(intent);
+               finish();
+               break;
+           default:
+               break;
+       }
+    }
+
+    private boolean validate() {
+        Boolean ret = true;
+        if(mPasswordConf.getText().equals("")){
+            mPasswordConf.setVisibility(View.VISIBLE);
+            Toast.makeText(mContext,getString(R.string.new_institution_conf_pass),Toast.LENGTH_SHORT).show();
+            ret = false;
+        }
+        return ret;
     }
 }

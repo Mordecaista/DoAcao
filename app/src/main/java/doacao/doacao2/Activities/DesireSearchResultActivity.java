@@ -83,7 +83,9 @@ public class DesireSearchResultActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.ADS_logout) {
             ParseUser.logOut();
-            finish(); //TODO:Return to institution login page
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

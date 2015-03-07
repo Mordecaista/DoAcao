@@ -52,21 +52,6 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        try {
-            PackageInfo info = getPackageManager().getPackageInfo("doacao.doacao2",PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                String aux = Base64.encodeToString(md.digest(), Base64.DEFAULT);
-                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-
-        } catch (NoSuchAlgorithmException e) {
-
-        }
-
         ParseUser current = ParseUser.getCurrentUser();
         if(current == null){
             Intent intent = new Intent(this, LoginActivity.class);
@@ -114,7 +99,9 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         }
         else if (id == R.id.action_logout) {
             ParseUser.logOut();
-            finish(); //TODO:Return to user login page
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

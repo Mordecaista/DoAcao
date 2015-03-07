@@ -357,7 +357,7 @@
     <string name="fill_to_update">Preencha para atualizar</string>
     <!-- From: file:/C:/develop/DoAcao2/app/src/debug/res/values/google_maps_api.xml -->
     <eat-comment/>
-    <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyDo-6VUfKvfVsG-qxqNUOzxOZBODWqY6Zg</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyDShYqo42EZlaiBN4c1r2PWSpY2hybemCU</string>
     <string name="google_maps_key_instructions" templateMergeStrategy="replace"><!--
    To get one, follow this link, follow the directions and press "Create" at the end:
 
@@ -376,8 +376,10 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="invalid_email">Email inválido. Favor digitar novamente.</string>
     <string name="location">Localização</string>
     <string name="login_or_signup">Entrar ou Cadastrar</string>
+    <string name="logn_generic_error">Alguma coisa aconteceu errada. Favor tentar novamente.</string>
     <string name="logout">Logout</string>
     <string name="name">Nome</string>
+    <string name="new_institution_conf_pass">Seja bem vindo ao DoAção! Favor digite a confirmação de senha e confirme.</string>
     <string name="no_items">Favor selecione pelo menos um item.</string>
     <string name="number">Numero</string>
     <string name="password">Senha</string>
@@ -390,6 +392,7 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="searchForInstitutions">Procure por Instituições</string>
     <string name="searchHere">Pesquise aqui</string>
     <string name="selectItems">Selecione os Itens</string>
+    <string name="session_invalid_error">A sua sessão não é mais válida, favor logar novamente</string>
     <string name="state">Estado</string>
     <!-- From: file:/C:/develop/DoAcao2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
     <eat-comment/>
