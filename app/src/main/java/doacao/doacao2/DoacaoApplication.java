@@ -22,6 +22,7 @@ public class DoacaoApplication extends Application{
         ParseObject.registerSubclass(Desire.class);
         ParseObject.registerSubclass(Institution.class);
         Parse.initialize(this, "0CPdvwDWdEq0QWHcdM3QvzJUaq9icV5mlyJWiDhe", "LGqb2riXezBTZNonbfNksXsDjdS11NxNtivZow5L");
+        //TODO:do not allow users to rotate screen
 
     }
 }

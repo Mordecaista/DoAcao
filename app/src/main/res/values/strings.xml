@@ -63,6 +63,7 @@
     <string name="new_institution_conf_pass">Seja bem vindo ao DoAção! Favor digite a confirmação de senha e confirme.</string>
     <string name="session_invalid_error">A sua sessão não é mais válida, favor logar novamente</string>
     <string name="logn_generic_error">Alguma coisa aconteceu errada. Favor tentar novamente.</string>
+    <string name="invalid_address">Não foi possível localizar este endereço. Por favor confira o endereço e tente novamente.</string>
 
 
 </resources>

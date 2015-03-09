@@ -58,7 +58,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
             startActivity(intent);
             finish();
         }
-        else if(!current.isAuthenticated()){
+        else if(current.getString("type").equals("institution")){
             Intent intent = new Intent(this, InstitutionRegisterActivity.class);
             startActivity(intent);
             finish();
@@ -161,6 +161,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
+        mGoogleApiClient.connect();
     }
 
     @Override

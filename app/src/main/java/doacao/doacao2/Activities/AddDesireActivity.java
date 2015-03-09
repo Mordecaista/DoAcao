@@ -109,7 +109,7 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.AIS_logout) {
+        if (id == R.id.AAD_logout) {
             ParseUser.logOut();
             Intent intent = new Intent(this,LoginActivity.class);
             startActivity(intent);
@@ -162,6 +162,7 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
+        mGoogleApiClient.connect();
     }
 
     @Override

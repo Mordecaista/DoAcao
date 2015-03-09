@@ -210,8 +210,8 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
             p1.add(location.getLongitude());
         } catch (IOException e) {
             e.printStackTrace();
-            p1.add(0.0);
-            p1.add(0.0);
+            p1.add(-999999999999999.9);
+            p1.add(-999999999999999.9);
         } finally {
             return p1;
         }
@@ -241,7 +241,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
         this.items = aux;
     }
 
-    private boolean valid(String name, int cnpj, String email, String password, String passConf, String country, String state, String city, String street, int number, String apartment, Double aDouble, Double aDouble1, ArrayList<String> items, int phone) {
+    private boolean valid(String name, int cnpj, String email, String password, String passConf, String country, String state, String city, String street, int number, String apartment, Double latitude, Double longitude, ArrayList<String> items, int phone) {
         //TODO:Add more validations if needed (fields null pending)
         boolean isValid = true;
         if(!password.equals(passConf)){
@@ -254,6 +254,10 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
         }
         else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             Toast.makeText(mContext, getString(R.string.invalid_email), Toast.LENGTH_LONG).show();
+            isValid = false;
+        }
+        else if(latitude == -999999999999999.9 && longitude == -999999999999999.9){
+            Toast.makeText(mContext, getString(R.string.invalid_address), Toast.LENGTH_LONG).show();
             isValid = false;
         }
         return isValid;

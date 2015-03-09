@@ -20,6 +20,7 @@ import com.facebook.Session;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 import com.parse.LogInCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseUser;
@@ -75,6 +76,7 @@ public class LoginActivity extends ActionBarActivity {
                 user.setUsername(email);
                 user.setPassword(pass);
                 user.setEmail(email);
+                user.put("type","institution");
                 try {
                     user.signUp();
                     finishActivity("institution");
@@ -89,7 +91,7 @@ public class LoginActivity extends ActionBarActivity {
     private View.OnClickListener mFaceListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            ParseFacebookUtils.logIn(Arrays.asList("public_profile","email"),act, new LogInCallback(){
+            ParseFacebookUtils.logIn(Arrays.asList("email","public_profile"),act, new LogInCallback(){
                 @Override
                 public void done(ParseUser user, ParseException err) {
                     if (user == null) {
@@ -97,7 +99,6 @@ public class LoginActivity extends ActionBarActivity {
                     }
                     else {
                         if (user.isNew()) {
-                            String a =
                             makeRequest();
                         }
                         else {
@@ -141,11 +142,18 @@ public class LoginActivity extends ActionBarActivity {
                             if (user != null) {
                                 String name = user.getName();
                                 String email = user.getProperty("email").toString();
-                                ((User) ParseUser.getCurrentUser()).setName(name);
-                                ((User) ParseUser.getCurrentUser()).setEmail(email);
-                                ((User) ParseUser.getCurrentUser()).setUsername(email);
-                                ParseUser.getCurrentUser().saveInBackground();
-                                finishActivity("user");
+                                ParseUser.getCurrentUser().setEmail(email);
+                                ParseUser.getCurrentUser().setUsername(email);
+                                ParseUser.getCurrentUser().put("name", name);
+                                ParseUser.getCurrentUser().put("type", "facebook");
+                                try {
+                                    ParseUser.getCurrentUser().save();
+                                    finishActivity("user");
+                                }
+                                catch (ParseException e){
+                                    Toast.makeText(getApplicationContext(), R.string.logn_generic_error, Toast.LENGTH_LONG).show();
+                                }
+
                             } else if (response.getError() != null) {
                                 if ((response.getError().getCategory() == FacebookRequestError.Category.AUTHENTICATION_RETRY)
                                         || (response.getError().getCategory() == FacebookRequestError.Category.AUTHENTICATION_REOPEN_SESSION)) {
@@ -180,12 +188,16 @@ public class LoginActivity extends ActionBarActivity {
     }
 
     private boolean validate() {
-        Boolean ret = true;
-        if(mPasswordConf.getText().equals("")){
+        Boolean isValid = true;
+        if(mPasswordConf.getVisibility() != View.VISIBLE){
             mPasswordConf.setVisibility(View.VISIBLE);
             Toast.makeText(mContext,getString(R.string.new_institution_conf_pass),Toast.LENGTH_SHORT).show();
-            ret = false;
+            isValid = false;
         }
-        return ret;
+        else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(mEmail.getText()).matches()){
+            Toast.makeText(mContext, getString(R.string.invalid_email), Toast.LENGTH_LONG).show();
+            isValid = false;
+        }
+        return isValid;
     }
 }
