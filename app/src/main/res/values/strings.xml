@@ -64,6 +64,16 @@
     <string name="session_invalid_error">A sua sessão não é mais válida, favor logar novamente</string>
     <string name="logn_generic_error">Alguma coisa aconteceu errada. Favor tentar novamente.</string>
     <string name="invalid_address">Não foi possível localizar este endereço. Por favor confira o endereço e tente novamente.</string>
+    <string name="title_activity_my_desires">MyDesiresActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="apagar_desejo">Você tem certeza que deseja apagar este desejo de doação?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="desire_delete_sucessfull">Desejo de Doação apagado com sucesso!</string>
+    <string name="desire_delete_unsucessfull">Ocorreu um problema ao deletar seu desejo de doação, por favor tente novamente.</string>
+    <string name="delete">Deletar</string>
+    <string name="myDesires">Meus Desejos de Doação</string>
 
 
 </resources>

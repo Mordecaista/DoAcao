@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -29,12 +30,13 @@ public class DesireDetailsActivity extends ActionBarActivity implements OnMapRea
 
     private Desire desire;
     private GoogleMap map;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desire_details);
-        Intent intent = getIntent();
+        intent = getIntent();
         TextView user = (TextView)findViewById(R.id.ADD_user);
         TextView items = (TextView)findViewById(R.id.ADD_items);
         TextView email = (TextView)findViewById(R.id.ADD_email);
@@ -80,8 +82,10 @@ public class DesireDetailsActivity extends ActionBarActivity implements OnMapRea
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_desire_details, menu);
+        if(getIntent().getStringExtra("source").equals("user")){
+            menu.findItem(R.id.ADD_delete).setVisible(true);
+        }
         return true;
     }
 
@@ -92,6 +96,12 @@ public class DesireDetailsActivity extends ActionBarActivity implements OnMapRea
             ParseUser.logOut();
             Intent intent = new Intent(this,LoginActivity.class);
             startActivity(intent);
+            finish();
+        }
+        else if(id == R.id.ADD_delete){
+            Intent intent = new Intent();
+            intent.putExtra("objectId",desire.getObjectId().toString());
+            setResult(RESULT_OK,intent);
             finish();
         }
 

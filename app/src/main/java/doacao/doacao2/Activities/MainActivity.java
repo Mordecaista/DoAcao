@@ -103,6 +103,10 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
             startActivity(intent);
             finish();
         }
+        else if (id == R.id.action_myDesires){
+            Intent intent = new Intent(this,MyDesiresActivity.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }

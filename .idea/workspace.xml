@@ -43,49 +43,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LoginActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/LoginActivity.java">
+      <file leaf-file-name="MyDesiresActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MyDesiresActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5589623" vertical-offset="2534" max-vertical-offset="3026">
-              <caret line="194" column="28" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2149" max-vertical-offset="2788">
+              <caret line="148" column="47" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
               <folding>
-                <element signature="e#1998#2891#0" expanded="true" />
-                <element signature="e#2774#2805#0" expanded="true" />
-                <element signature="e#2884#2885#0" expanded="true" />
-                <element signature="e#3110#3704#0" expanded="true" />
-                <element signature="e#3316#3352#0" expanded="true" />
-                <element signature="e#3689#3690#0" expanded="true" />
-                <element signature="e#4630#6484#0" expanded="true" />
-                <element signature="e#5632#5659#0" expanded="true" />
-                <element signature="e#6140#6170#0" expanded="true" />
-                <element signature="e#6317#6344#0" expanded="true" />
-                <element signature="e#6461#6462#0" expanded="true" />
-                <element signature="e#7280#7325#0" expanded="true" />
-                <element signature="e#7521#7554#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstitutionRegisterActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/InstitutionRegisterActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3584" max-vertical-offset="4063">
-              <caret line="254" column="13" selection-start-line="254" selection-start-column="13" selection-end-line="257" selection-end-column="9" />
-              <folding>
-                <element signature="e#3936#3967#0" expanded="true" />
-                <element signature="e#4104#4135#0" expanded="true" />
-                <element signature="e#5095#8255#0" expanded="true" />
-                <element signature="e#6707#6741#0" expanded="true" />
-                <element signature="e#7694#8223#0" expanded="true" />
-                <element signature="e#7896#7938#0" expanded="true" />
-                <element signature="e#8103#8128#0" expanded="true" />
-                <element signature="e#8204#8205#0" expanded="true" />
-                <element signature="e#8248#8249#0" expanded="true" />
-                <element signature="e#10211#10252#0" expanded="true" />
-                <element signature="e#10393#10421#0" expanded="true" />
-                <element signature="e#10606#10639#0" expanded="true" />
-                <element signature="e#10828#10863#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1251#1722#0" expanded="true" />
+                <element signature="e#1711#1712#0" expanded="true" />
+                <element signature="e#1761#3158#0" expanded="true" />
+                <element signature="e#2018#2040#0" expanded="true" />
+                <element signature="e#2085#2097#0" expanded="true" />
+                <element signature="e#2099#2759#0" expanded="true" />
+                <element signature="e#2398#2442#0" expanded="true" />
+                <element signature="e#2579#2625#0" expanded="true" />
+                <element signature="e#2740#2741#0" expanded="true" />
+                <element signature="e#2804#2815#0" expanded="true" />
+                <element signature="e#2817#3017#0" expanded="true" />
+                <element signature="e#2998#2999#0" expanded="true" />
+                <element signature="e#3147#3148#0" expanded="true" />
+                <element signature="e#5523#5567#0" expanded="true" />
+                <element signature="e#5680#5726#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,8 +73,28 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="2533">
-              <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="448" max-vertical-offset="2601">
+              <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DesireDetailsActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/DesireDetailsActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.31494254" vertical-offset="1189" max-vertical-offset="1887">
+              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu_desire_details.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_desire_details.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -842,8 +841,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/MapPane.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/User.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/IntitutionRegister.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_intitution_register.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/AddDesireActivity.java" />
@@ -870,9 +867,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/MultiSpinner.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_institution_register.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_institution_search_result.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_add_desire.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_desire_details.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_desire_search_result.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_institution_register.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_institution_login.xml" />
@@ -882,17 +877,21 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/DesireDetailsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/DesireSearchResultActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/InstitutionSearchResultActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_desire.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/DoacaoApplication.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/AddDesireActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/InstitutionRegisterActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_my_desires.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_desire_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/DesireDetailsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MyDesiresActivity.java" />
       </list>
     </option>
   </component>
@@ -900,10 +899,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1552" />
-    <option name="height" value="842" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1534" />
+    <option name="height" value="824" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -932,7 +931,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -992,24 +990,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DoAcao2" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1101,6 +1081,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
     </panes>
   </component>
@@ -1130,12 +1111,12 @@
       <recent name="doacao.doacao2.Activities" />
       <recent name="doacao.doacao2" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\develop\DoAcao2\app\src\main\res\xml" />
-    </key>
     <key name="android.template.parentActivityClass">
       <recent name="" />
       <recent name="doacao.doacao2.MainActivity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\develop\DoAcao2\app\src\main\res\xml" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.app">
@@ -1329,30 +1310,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1552" height="842" extended-state="6" />
+    <frame x="1" y="1" width="1534" height="824" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841823" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252688" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34014598" sideWeight="0.54490614" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3388306" sideWeight="0.54490614" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29927006" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.50108933" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27737227" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29927006" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30584708" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24932976" sideWeight="0.49891067" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31970802" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2523745" sideWeight="0.49891067" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31934032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -1394,39 +1375,26 @@
           <properties />
           <option name="timeStamp" value="96" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MyDesiresActivity.java</url>
+          <line>145</line>
+          <properties />
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MyDesiresActivity.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="97" />
+      <option name="time" value="101" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_institution_register.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2964" max-vertical-offset="3621">
-          <caret line="195" column="12" selection-start-line="195" selection-start-column="12" selection-end-line="195" selection-end-column="12" />
-          <folding>
-            <element signature="e#221#256#0" expanded="false" />
-            <element signature="e#282#317#0" expanded="false" />
-            <element signature="e#341#374#0" expanded="false" />
-            <element signature="e#401#434#0" expanded="false" />
-            <element signature="e#1547#1561#0" expanded="false" />
-            <element signature="e#9642#9658#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="1649">
-          <caret line="59" column="62" selection-start-line="59" selection-start-column="62" selection-end-line="59" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -1434,7 +1402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="340">
           <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1477,13 +1444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3310811" vertical-offset="5291" max-vertical-offset="6681">
           <caret line="374" column="26" selection-start-line="374" selection-start-column="26" selection-end-line="374" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-21/android/app/ActivityThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4831081" vertical-offset="85622" max-vertical-offset="85918">
-          <caret line="5222" column="0" selection-start-line="5222" selection-start-column="0" selection-end-line="5222" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1533,13 +1493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/ListArrayAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4988399" vertical-offset="108" max-vertical-offset="595">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/MultiSpinner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2244">
@@ -1554,32 +1507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32" vertical-offset="0" max-vertical-offset="425">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_desire_search_result.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28" vertical-offset="0" max-vertical-offset="425">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_desire_search_result.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15044248" vertical-offset="0" max-vertical-offset="452">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1612,14 +1539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4590">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#221#256#0" expanded="false" />
-            <element signature="e#282#317#0" expanded="false" />
-            <element signature="e#341#374#0" expanded="false" />
-            <element signature="e#401#434#0" expanded="false" />
-            <element signature="e#1547#1561#0" expanded="false" />
-            <element signature="e#9642#9658#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1637,7 +1556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15925059" vertical-offset="0" max-vertical-offset="427">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1681,18 +1599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46875" vertical-offset="1044" max-vertical-offset="1683">
           <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
-          <folding>
-            <element signature="e#225#260#0" expanded="false" />
-            <element signature="e#286#321#0" expanded="false" />
-            <element signature="e#345#378#0" expanded="false" />
-            <element signature="e#405#438#0" expanded="false" />
-            <element signature="e#1005#1025#0" expanded="false" />
-            <element signature="e#2218#2245#0" expanded="false" />
-            <element signature="e#2548#2563#0" expanded="false" />
-            <element signature="e#2790#2808#0" expanded="false" />
-            <element signature="e#3040#3070#0" expanded="false" />
-            <element signature="e#3255#3280#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1711,25 +1617,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/DesireDetailsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3207547" vertical-offset="1020" max-vertical-offset="1734">
-          <caret line="91" column="31" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/InstitutionSearchResultActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1064" max-vertical-offset="1615">
           <caret line="97" column="51" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/DesireSearchResultActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3119469" vertical-offset="913" max-vertical-offset="1615">
-          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1741,21 +1632,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-21/com/android/internal/os/ZygoteInit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="15028">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32664#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Objects/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="493">
           <caret line="23" column="17" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1763,7 +1643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="88378" max-vertical-offset="101796">
           <caret line="5426" column="0" selection-start-line="5426" selection-start-column="0" selection-end-line="5426" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1782,7 +1661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
           <caret line="0" column="13" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1790,15 +1668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6391509" vertical-offset="1" max-vertical-offset="442">
           <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_desire_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1880531" vertical-offset="0" max-vertical-offset="452">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1814,15 +1683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43735763" vertical-offset="1032" max-vertical-offset="2839">
           <caret line="111" column="33" selection-start-line="111" selection-start-column="33" selection-end-line="111" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="2533">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1830,43 +1690,141 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3584" max-vertical-offset="4063">
           <caret line="254" column="13" selection-start-line="254" selection-start-column="13" selection-end-line="257" selection-end-column="9" />
-          <folding>
-            <element signature="e#3936#3967#0" expanded="true" />
-            <element signature="e#4104#4135#0" expanded="true" />
-            <element signature="e#5095#8255#0" expanded="true" />
-            <element signature="e#6707#6741#0" expanded="true" />
-            <element signature="e#7694#8223#0" expanded="true" />
-            <element signature="e#7896#7938#0" expanded="true" />
-            <element signature="e#8103#8128#0" expanded="true" />
-            <element signature="e#8204#8205#0" expanded="true" />
-            <element signature="e#8248#8249#0" expanded="true" />
-            <element signature="e#10211#10252#0" expanded="true" />
-            <element signature="e#10393#10421#0" expanded="true" />
-            <element signature="e#10606#10639#0" expanded="true" />
-            <element signature="e#10828#10863#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_desire_search_result.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="657">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_desire_search_result.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.185185" vertical-offset="0" max-vertical-offset="408">
+          <caret line="13" column="49" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5589623" vertical-offset="2534" max-vertical-offset="3026">
-          <caret line="194" column="28" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.59782606" vertical-offset="2216" max-vertical-offset="2873">
+          <caret line="193" column="109" selection-start-line="193" selection-start-column="12" selection-end-line="193" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/DesireSearchResultActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.22678843" vertical-offset="319" max-vertical-offset="1615">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="561">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="43" />
           <folding>
-            <element signature="e#1998#2891#0" expanded="true" />
-            <element signature="e#2774#2805#0" expanded="true" />
-            <element signature="e#2884#2885#0" expanded="true" />
-            <element signature="e#3110#3704#0" expanded="true" />
-            <element signature="e#3316#3352#0" expanded="true" />
-            <element signature="e#3689#3690#0" expanded="true" />
-            <element signature="e#4630#6484#0" expanded="true" />
-            <element signature="e#5632#5659#0" expanded="true" />
-            <element signature="e#6140#6170#0" expanded="true" />
-            <element signature="e#6317#6344#0" expanded="true" />
-            <element signature="e#6461#6462#0" expanded="true" />
-            <element signature="e#7280#7325#0" expanded="true" />
-            <element signature="e#7521#7554#0" expanded="true" />
+            <element signature="e#275#294#0" expanded="true" />
+            <element signature="e#433#449#0" expanded="true" />
+            <element signature="e#589#605#0" expanded="true" />
+            <element signature="e#841#854#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_my_desires.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47103274" vertical-offset="0" max-vertical-offset="408">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_desire_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/ListArrayAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26327434" vertical-offset="0" max-vertical-offset="595">
+          <caret line="16" column="50" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="448" max-vertical-offset="2601">
+          <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-21/com/android/internal/os/ZygoteInit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="15028">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32664#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-21/android/app/ActivityThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57272" max-vertical-offset="85918">
+          <caret line="3548" column="0" selection-start-line="3548" selection-start-column="0" selection-end-line="3548" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/MyDesiresActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2149" max-vertical-offset="2788">
+          <caret line="148" column="47" selection-start-line="148" selection-start-column="47" selection-end-line="148" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1251#1722#0" expanded="true" />
+            <element signature="e#1711#1712#0" expanded="true" />
+            <element signature="e#1761#3158#0" expanded="true" />
+            <element signature="e#2018#2040#0" expanded="true" />
+            <element signature="e#2085#2097#0" expanded="true" />
+            <element signature="e#2099#2759#0" expanded="true" />
+            <element signature="e#2398#2442#0" expanded="true" />
+            <element signature="e#2579#2625#0" expanded="true" />
+            <element signature="e#2740#2741#0" expanded="true" />
+            <element signature="e#2804#2815#0" expanded="true" />
+            <element signature="e#2817#3017#0" expanded="true" />
+            <element signature="e#2998#2999#0" expanded="true" />
+            <element signature="e#3147#3148#0" expanded="true" />
+            <element signature="e#5523#5567#0" expanded="true" />
+            <element signature="e#5680#5726#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/doacao/doacao2/Activities/DesireDetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31494254" vertical-offset="1189" max-vertical-offset="1887">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

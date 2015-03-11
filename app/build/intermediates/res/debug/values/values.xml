@@ -272,6 +272,7 @@
     <eat-comment/>
     <string name="action_settings">Settings</string>
     <string name="add">Adicionar</string>
+    <string name="apagar_desejo">Você tem certeza que deseja apagar este desejo de doação?</string>
     <string name="apartment">Complemento</string>
     <string name="app_id">391629757675073</string>
     <string name="app_name">DoAção</string>
@@ -348,7 +349,10 @@
     <string name="decline">Decline</string>
     <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="delete">Deletar</string>
     <string name="desireSearch">Pesquisa de Doadores</string>
+    <string name="desire_delete_sucessfull">Desejo de Doação apagado com sucesso!</string>
+    <string name="desire_delete_unsucessfull">Ocorreu um problema ao deletar seu desejo de doação, por favor tente novamente.</string>
     <string name="email">Email</string>
     <string name="email_label">Email:</string>
     <string name="error">Erro. Tente Novamente!</string>
@@ -371,15 +375,19 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     --></string>
     <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="hello_world">Hello world!</string>
     <string name="im_not_an_institution">Não sou uma instituição!</string>
     <string name="institution_login">Login de Instituição</string>
+    <string name="invalid_address">Não foi possível localizar este endereço. Por favor confira o endereço e tente novamente.</string>
     <string name="invalid_email">Email inválido. Favor digitar novamente.</string>
     <string name="location">Localização</string>
     <string name="login_or_signup">Entrar ou Cadastrar</string>
     <string name="logn_generic_error">Alguma coisa aconteceu errada. Favor tentar novamente.</string>
     <string name="logout">Logout</string>
+    <string name="myDesires">Meus Desejos de Doação</string>
     <string name="name">Nome</string>
     <string name="new_institution_conf_pass">Seja bem vindo ao DoAção! Favor digite a confirmação de senha e confirme.</string>
+    <string name="no">Não</string>
     <string name="no_items">Favor selecione pelo menos um item.</string>
     <string name="number">Numero</string>
     <string name="password">Senha</string>
@@ -410,6 +418,7 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="title_activity_institution_register">Cadastrar Nova Instituição</string>
     <string name="title_activity_institution_search_result">InstitutionSearchResultActivity</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_my_desires">MyDesiresActivity</string>
     <string name="user_login">Login de Usuário</string>
     <!-- From: file:/C:/develop/DoAcao2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_strings.xml -->
     <eat-comment/>
@@ -417,6 +426,7 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="wants_to_donate_label">Deseja Doar:</string>
+    <string name="yes">Sim</string>
     <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
