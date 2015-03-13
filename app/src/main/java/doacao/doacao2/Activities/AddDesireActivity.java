@@ -84,21 +84,35 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
             String email = mEmail.getText().toString();
             String phone = mPhone.getText().toString();
             LatLng aux = loc.getPosition();
-            Desire desire = new Desire(email,phone,aux.latitude,aux.longitude,items);
-            desire.saveInBackground(new SaveCallback(){
-                @Override
-                public void done(ParseException e) {
-                    if(e == null){
-                        Toast.makeText(mContext,getString(R.string.submitted_with_success),Toast.LENGTH_SHORT).show();
-                        finish();
+            if(validate(email,phone,aux,items)) {
+                Desire desire = new Desire(email, phone, aux.latitude, aux.longitude, items);
+                desire.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e == null) {
+                            Toast.makeText(mContext, getString(R.string.submitted_with_success), Toast.LENGTH_SHORT).show();
+                            finish();
+                        } else {
+                            Toast.makeText(mContext, getString(R.string.error), Toast.LENGTH_SHORT).show();
+                        }
                     }
-                    else{
-                        Toast.makeText(mContext,getString(R.string.error),Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
+                });
+            }
         }
     };
+
+    private boolean validate(String email, String phone, LatLng aux, ArrayList<String> items) {
+        boolean isValid = true;//TODO:more validations (email or phone must be selected, one can be empty, not both)
+        if(items == null || items.size() == 0){
+            Toast.makeText(mContext, getString(R.string.no_items), Toast.LENGTH_LONG).show();
+            isValid = false;
+        }
+        else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            Toast.makeText(mContext, getString(R.string.invalid_email), Toast.LENGTH_LONG).show();
+            isValid = false;
+        }
+        return isValid;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -169,7 +183,6 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
     public void onConnected(Bundle bundle) {
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if(map != null) {
-            //LatLng position = new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
             LatLng position = new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 13));
             loc = map.addMarker(new MarkerOptions()

@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import doacao.doacao2.DoacaoApplication;
 import doacao.doacao2.MultiSpinner;
 import doacao.doacao2.Objects.Institution;
 import doacao.doacao2.R;
@@ -103,6 +104,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
             }
             mItems.setItems(Arrays.asList(possibleItems), getString(R.string.selectItems), this,selected);
             this.items = selectList;
+            DoacaoApplication.institution = institution;
         }
         else{
             mItems.setItems(Arrays.asList(possibleItems), getString(R.string.selectItems), this);
@@ -184,6 +186,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
                     public void done(ParseException e) {
                         if (e == null) {
                             Toast.makeText(mContext, getString(R.string.submitted_with_success), Toast.LENGTH_SHORT).show();
+                            DoacaoApplication.institution = institution;
                         } else {
                             e.printStackTrace();
                             Toast.makeText(mContext, getString(R.string.error), Toast.LENGTH_SHORT).show();

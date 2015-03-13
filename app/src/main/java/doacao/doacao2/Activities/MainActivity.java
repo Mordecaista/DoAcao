@@ -37,6 +37,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
 
+import doacao.doacao2.DoacaoApplication;
 import doacao.doacao2.ListArrayAdapter;
 import doacao.doacao2.Objects.Institution;
 import doacao.doacao2.R;
@@ -77,14 +78,12 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        // Associate searchable configuration with the SearchView
         SearchManager searchManager =
                 (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView =
                 (SearchView) menu.findItem(R.id.action_search).getActionView();
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(getComponentName()));
-
         return true;
     }
 
@@ -138,6 +137,11 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
 
     public void loadInstitutions(){
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Institution");
+        if(mLastLocation != null) {
+            ParseGeoPoint userLocation = new ParseGeoPoint(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+            query.whereNear("location", userLocation);
+        }
+        query.setLimit(100);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> parseObjects, ParseException e) {
@@ -147,7 +151,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                         LatLng location = new LatLng(geopoint.getLatitude(),geopoint.getLongitude());
                         Marker marker = map.addMarker(new MarkerOptions()
                                 .title(((Institution)parseObjects.get(i)).getName())
-                                .snippet(((Institution)parseObjects.get(i)).getItems().get(0))//TODO: Fix this to get the whole list formatted correctly
+                                .snippet(((Institution)parseObjects.get(i)).getItems().get(0)) //TODO:fix which data is displayed
                                 .position(location));
                         markers.put(((Institution) parseObjects.get(i)).getObjectId(),marker);
                     }
@@ -171,6 +175,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     @Override
     public void onConnected(Bundle bundle) {
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        DoacaoApplication.mLocation = mLastLocation;
         if(map != null) {
             LatLng position = new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 13));

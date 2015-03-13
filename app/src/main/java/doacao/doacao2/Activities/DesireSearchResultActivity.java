@@ -1,5 +1,6 @@
 package doacao.doacao2.Activities;
 
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -11,17 +12,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import doacao.doacao2.DoacaoApplication;
 import doacao.doacao2.ListArrayAdapter;
 import doacao.doacao2.Objects.Desire;
+import doacao.doacao2.Objects.Institution;
 import doacao.doacao2.R;
 
 
@@ -29,6 +36,7 @@ public class DesireSearchResultActivity extends ActionBarActivity {
 
     private ListView list;
     private Context mContext;
+    private ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,16 +79,13 @@ public class DesireSearchResultActivity extends ActionBarActivity {
     private void handleIntent(Intent intent) {
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            ListArrayAdapter adapter = new ListArrayAdapter(this, searchDesires(intent.getStringExtra(SearchManager.QUERY)));
-            list.setAdapter(adapter);
+            searchDesires(intent.getStringExtra(SearchManager.QUERY));
         }
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.ADS_logout) {
             ParseUser.logOut();
             Intent intent = new Intent(this,LoginActivity.class);
@@ -91,24 +96,35 @@ public class DesireSearchResultActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public ArrayList<ArrayList<String>> searchDesires(String criteria){
-        ArrayList<ArrayList<String>> array = new ArrayList<ArrayList<String>>();
+    public void searchDesires(String criteria){
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Desire");
         if(criteria != null){
-            query.whereEqualTo("phone",criteria); //TODO:Change this criteria for a real one
+            query.whereContainedIn("items", Arrays.asList(criteria));
         }
-        try {
-            List<ParseObject> results = query.find();
-            for (int i = 0; i < results.size() && i < 100; i++) {
-                ArrayList<String> temp = new ArrayList<String>();
-                temp.add(((Desire) results.get(i)).getUsername());
-                temp.add(((Desire) results.get(i)).getObjectId().toString());
-                array.add(temp);
+        if(DoacaoApplication.mLocation != null) {
+            ParseGeoPoint userLocation = new ParseGeoPoint(DoacaoApplication.mLocation.getLatitude(), DoacaoApplication.mLocation.getLongitude());
+            query.whereNear("location", userLocation);
+        }
+        query.setLimit(100);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> results, ParseException e) {
+                ArrayList<ArrayList<String>> array = new ArrayList<ArrayList<String>>();
+                if (e == null) {
+                    for (int i = 0; i < results.size(); i++) {
+                        ArrayList<String> temp = new ArrayList<String>();
+                        temp.add(((Desire) results.get(i)).getUsername()); //TODO:fix which data is displayed
+                        temp.add(((Desire) results.get(i)).getObjectId().toString());
+                        array.add(temp);
+                    }
+                }
+                else{
+                    Toast.makeText(mContext, getString(R.string.search_error), Toast.LENGTH_LONG).show();
+                }
+                ListArrayAdapter adapter = new ListArrayAdapter(mContext, array);
+                list.setAdapter(adapter);
+                progress.dismiss();
             }
-        }
-        catch (ParseException e){
-            return array;
-        }
-        return array;
+        });
+        progress = ProgressDialog.show(this, getString(R.string.searching), "", true);
     }
 }

@@ -32,6 +32,7 @@ public class MyDesiresActivity extends ActionBarActivity {
     private ListView list;
     private Context mContext;
     private View tempView;
+    private ListArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,20 +51,19 @@ public class MyDesiresActivity extends ActionBarActivity {
                 startActivityForResult(intent,0);
             }
         });
-        list.setOnLongClickListener(new AdapterView.OnLongClickListener() {
+        list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                tempView = v;
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                tempView = view;
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                 builder.setMessage(R.string.apagar_desejo);
                 builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int position) {
-                        if(deleteDesire(tempView.getTag().toString())){
-                            list.removeView(tempView);
-                            Toast.makeText(mContext,getString(R.string.desire_delete_sucessfull),Toast.LENGTH_SHORT).show();
-                        }
-                        else{
-                            Toast.makeText(mContext,getString(R.string.desire_delete_unsucessfull),Toast.LENGTH_LONG).show();
+                        if (deleteDesire(tempView.getTag().toString())) {
+                            list.removeViewInLayout(tempView);
+                            Toast.makeText(mContext, getString(R.string.desire_delete_sucessfull), Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(mContext, getString(R.string.desire_delete_unsucessfull), Toast.LENGTH_LONG).show();
                         }
                         dialog.cancel();
                     }
@@ -75,8 +75,7 @@ public class MyDesiresActivity extends ActionBarActivity {
                 });
                 AlertDialog alert = builder.create();
                 alert.show();
-
-                return false;
+                return true;
             }
         });
         handleIntent(getIntent());
@@ -111,7 +110,7 @@ public class MyDesiresActivity extends ActionBarActivity {
     }
 
     private void handleIntent(Intent intent) {
-        ListArrayAdapter adapter = new ListArrayAdapter(this, searchDesires());
+        adapter = new ListArrayAdapter(this, searchDesires());
         list.setAdapter(adapter);
     }
 
@@ -145,8 +144,7 @@ public class MyDesiresActivity extends ActionBarActivity {
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {
                 if(tempView != null && deleteDesire(tempView.getTag().toString())){
-                    //list.removeView(tempView);
-                    handleIntent(new Intent());
+                    list.removeViewInLayout(tempView);
                     Toast.makeText(mContext,getString(R.string.desire_delete_sucessfull),Toast.LENGTH_SHORT).show();
                 }
                 else{

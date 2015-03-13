@@ -48,7 +48,7 @@
     <string name="approximate_location_label">Localização Aproximada:</string>
     <string name="wants_to_donate_label">Deseja Doar:</string>
     <string name="password_doesnt_match">Senha não está de acordo com a conferência, favor digitar novamente.</string>
-    <string name="no_items">Favor selecione pelo menos um item.</string>
+    <string name="no_items">Por favor selecione pelo menos um item.</string>
     <string name="invalid_email">Email inválido. Favor digitar novamente.</string>
     <string name="fill_to_update">Preencha para atualizar</string>
     <string name="cant_save_user">Não foi possível alterar os dados de email e senha, tente novamente mais tarde.</string>
@@ -74,6 +74,8 @@
     <string name="desire_delete_unsucessfull">Ocorreu um problema ao deletar seu desejo de doação, por favor tente novamente.</string>
     <string name="delete">Deletar</string>
     <string name="myDesires">Meus Desejos de Doação</string>
+    <string name="search_error">Ocorreu um erro durante a busca, por favor tente novamente.</string>
+    <string name="searching">Buscando</string>
 
 
 </resources>

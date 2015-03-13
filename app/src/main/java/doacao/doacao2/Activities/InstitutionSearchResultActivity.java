@@ -1,5 +1,6 @@
 package doacao.doacao2.Activities;
 
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -11,15 +12,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import doacao.doacao2.DoacaoApplication;
 import doacao.doacao2.ListArrayAdapter;
 import doacao.doacao2.Objects.Desire;
 import doacao.doacao2.Objects.Institution;
@@ -29,6 +35,7 @@ public class InstitutionSearchResultActivity extends ActionBarActivity {
 
     private ListView list;
     private Context mContext;
+    private ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,8 +79,7 @@ public class InstitutionSearchResultActivity extends ActionBarActivity {
     private void handleIntent(Intent intent) {
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            ListArrayAdapter adapter = new ListArrayAdapter(this, searchInstitutions(intent.getStringExtra(SearchManager.QUERY)));
-            list.setAdapter(adapter);
+            searchInstitutions(intent.getStringExtra(SearchManager.QUERY));
         }
     }
 
@@ -91,25 +97,42 @@ public class InstitutionSearchResultActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public ArrayList<ArrayList<String>> searchInstitutions(String criteria){
-        ArrayList<ArrayList<String>> array = new ArrayList<ArrayList<String>>();
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Institution");
-        if(criteria != null){
-            query.whereEqualTo("name",criteria); //TODO:Change this criteria for a real one
-        }
-        try {
-            List<ParseObject> results = query.find();
-            for (int i = 0; i < results.size() && i < 100; i++) {
-                ArrayList<String> temp = new ArrayList<String>();
-                temp.add(((Institution) results.get(i)).getName());
-                temp.add(((Institution) results.get(i)).getObjectId().toString());
-                array.add(temp);
-            }
-        }
-        catch (ParseException e){
-            return array;
-        }
-        return array;
-    }
+    public void searchInstitutions(String criteria){
 
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Institution");
+        ParseQuery<ParseObject> query2 = ParseQuery.getQuery("Institution");
+        List<ParseQuery<ParseObject>> queries = new ArrayList<ParseQuery<ParseObject>>();
+        if(criteria != null){
+            query.whereContains("name",criteria);
+            query2.whereContainedIn("items", Arrays.asList(criteria));
+            queries.add(query);
+        }
+        queries.add(query2);
+        ParseQuery<ParseObject> orQuery = ParseQuery.or(queries);
+        if(DoacaoApplication.mLocation != null) {
+            ParseGeoPoint userLocation = new ParseGeoPoint(DoacaoApplication.mLocation.getLatitude(), DoacaoApplication.mLocation.getLongitude());
+            orQuery.whereNear("location", userLocation);
+        }
+        orQuery.setLimit(100);
+        orQuery.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> results, ParseException e) {
+                ArrayList<ArrayList<String>> array = new ArrayList<ArrayList<String>>();
+                if (e == null) {
+                    for (int i = 0; i < results.size(); i++) {
+                        ArrayList<String> temp = new ArrayList<String>();
+                        temp.add(((Institution) results.get(i)).getName()); //TODO:fix which data is displayed
+                        temp.add(((Institution) results.get(i)).getObjectId().toString());
+                        array.add(temp);
+                    }
+                }
+                else{
+                    Toast.makeText(mContext, getString(R.string.search_error), Toast.LENGTH_LONG).show();
+                }
+                ListArrayAdapter adapter = new ListArrayAdapter(mContext, array);
+                list.setAdapter(adapter);
+                progress.dismiss();
+            }
+        });
+        progress = ProgressDialog.show(this, getString(R.string.searching), "", true);
+    }
 }

@@ -1,7 +1,9 @@
 package doacao.doacao2;
 
 import android.app.Application;
+import android.location.Location;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -14,8 +16,11 @@ import doacao.doacao2.Objects.Institution;
  * Created by Alexandre on 09/02/2015.
  */
 public class DoacaoApplication extends Application{
-    @Override
 
+    public static Location mLocation;
+    public static Institution institution;
+
+    @Override
     public void onCreate() {
         super.onCreate();
         //Parse.enableLocalDatastore(this);
