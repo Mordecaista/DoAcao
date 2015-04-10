@@ -34,6 +34,7 @@ import com.parse.ParseUser;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -149,9 +150,12 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                     for(int i = 0; i < parseObjects.size(); i++){
                         ParseGeoPoint geopoint = ((Institution) parseObjects.get(i)).getLocation();
                         LatLng location = new LatLng(geopoint.getLatitude(),geopoint.getLongitude());
+                        String aux = "Telefone: " + ((Institution)parseObjects.get(i)).getPhone() +
+                                     "\nEmail: " + ((Institution)parseObjects.get(i)).getEmail() +
+                                     "\nPrecisa de:\n" + formatItems(((Institution)parseObjects.get(i)).getItems());
                         Marker marker = map.addMarker(new MarkerOptions()
                                 .title(((Institution)parseObjects.get(i)).getName())
-                                .snippet(((Institution)parseObjects.get(i)).getItems().get(0)) //TODO:fix which data is displayed
+                                .snippet(aux) //TODO:fix which data is displayed
                                 .position(location));
                         markers.put(((Institution) parseObjects.get(i)).getObjectId(),marker);
                     }
@@ -176,7 +180,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     public void onConnected(Bundle bundle) {
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         DoacaoApplication.mLocation = mLastLocation;
-        if(map != null) {
+        if(map != null && mLastLocation != null) {
             LatLng position = new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude());
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 13));
         }
@@ -190,5 +194,13 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
 
+    }
+
+    private String formatItems(ArrayList<String> items) {
+        String text = "";
+        for(String n : items){
+            text += "-"+n+"\n";
+        }
+        return text;
     }
 }

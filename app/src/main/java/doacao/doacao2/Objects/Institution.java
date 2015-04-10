@@ -22,7 +22,7 @@ public class Institution extends ParseObject{
     }
 
     public Institution(String name, int cnpj, String country, String state, String city, String street, int number, String apartment,
-                       double latitude, double longitude, ArrayList<String> items, int phone){
+                       double latitude, double longitude, ArrayList<String> items, int phone, String email){
         put("name",name);
         put("cnpj",cnpj);
         put("country",country);
@@ -32,6 +32,7 @@ public class Institution extends ParseObject{
         put("number",number);
         put("apartment",apartment);
         put("phone",phone);
+        put("email",email);
 
         JSONArray myArray = new JSONArray();
         for(String n : items) myArray.put(n);
@@ -75,6 +76,9 @@ public class Institution extends ParseObject{
     public String getStreet(){
         return getString("street");
     }
+    public String getEmail(){
+        return getString("email");
+    }
     public int getNumber(){
         return getInt("number");
     }
@@ -117,6 +121,9 @@ public class Institution extends ParseObject{
     }
     public void setStreet(String street){
         put("street",street);
+    }
+    public void setEmail(String email){
+        put("email",email);
     }
     public void setNumber(int number){
         put("number",number);

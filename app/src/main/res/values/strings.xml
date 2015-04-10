@@ -14,7 +14,7 @@
     <string name="app_name">DoAção</string>
     <string name="app_id">391629757675073</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_add_desire">AddDesireActivity</string>
+    <string name="title_activity_add_desire">Cadastrar Desejo de Doação</string>
     <string name="add">Adicionar</string>
     <string name="cadastrar_desejo_doacao">Cadastrar Desejo de Doação</string>
     <string name="email">Email</string>
@@ -26,7 +26,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="search">search</string>
     <string name="searchHere">Pesquise aqui</string>
-    <string name="title_activity_institution_register">Cadastrar Nova Instituição</string>
+    <string name="title_activity_institution_register">Dados da Instituição</string>
     <string name="name">Nome</string>
     <string name="cnpj">CNPJ</string>
     <string name="password">Senha</string>
@@ -37,11 +37,11 @@
     <string name="number">Numero</string>
     <string name="apartment">Complemento</string>
     <string name="searchDesires">Procurar Doadores</string>
-    <string name="title_activity_desire_search_result">DesireSearchResultActivity</string>
-    <string name="desireSearch">Pesquisa de Doadores</string>
-    <string name="title_activity_desire_details">DesireDetailsActivity</string>
+    <string name="title_activity_desire_search_result">Resultados</string>
+    <string name="desireSearch">Pesquisa de Desejos de Doação</string>
+    <string name="title_activity_desire_details">Detalhes do Desejo</string>
     <string name="searchForInstitutions">Procure por Instituições</string>
-    <string name="title_activity_institution_search_result">InstitutionSearchResultActivity</string>
+    <string name="title_activity_institution_search_result">Resultados</string>
     <string name="selectItems">Selecione os Itens</string>
     <string name="email_label">Email:</string>
     <string name="phone_label">Telefone:</string>
@@ -53,7 +53,7 @@
     <string name="fill_to_update">Preencha para atualizar</string>
     <string name="cant_save_user">Não foi possível alterar os dados de email e senha, tente novamente mais tarde.</string>
     <string name="logout">Logout</string>
-    <string name="title_activity_institution_login">InstitutionLoginActivity</string>
+    <string name="title_activity_institution_login">DoAção</string>
     <string name="im_not_an_institution">Não sou uma instituição!</string>
     <string name="login_or_signup">Entrar ou Cadastrar</string>
     <string name="institution_login">Login de Instituição</string>

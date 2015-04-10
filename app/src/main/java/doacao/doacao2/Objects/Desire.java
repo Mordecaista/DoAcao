@@ -74,7 +74,7 @@ public class Desire extends ParseObject {
         try {
             List<ParseUser> results = query.find();
             if(results.size() > 0)
-               aux = results.get(0).getUsername();
+               aux = results.get(0).getString("name");
         }
         catch(ParseException e){
             e.printStackTrace();

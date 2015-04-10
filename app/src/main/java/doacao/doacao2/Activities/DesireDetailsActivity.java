@@ -83,7 +83,8 @@ public class DesireDetailsActivity extends ActionBarActivity implements OnMapRea
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_desire_details, menu);
-        if(getIntent().getStringExtra("source").equals("user")){
+        String aux = getIntent().getStringExtra("source");
+        if(aux != null && aux.equals("user")){
             menu.findItem(R.id.ADD_delete).setVisible(true);
         }
         return true;

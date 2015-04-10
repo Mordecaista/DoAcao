@@ -153,7 +153,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
 
             ArrayList<Double> geopoint = getLocationFromAddress(number+" "+street+", "+city+", "+state+", "+country);
             if(valid(name, cnpj, email, password, passConf, country, state, city, street, number, apartment, geopoint.get(0), geopoint.get(1), items, phone)) {
-                if(password != null){
+                if(password != null && !password.equals("")){
                     ParseUser.getCurrentUser().setPassword(password);
                     ParseUser.getCurrentUser().setEmail(email);
                     ParseUser.getCurrentUser().setUsername(email);
@@ -166,7 +166,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
                     }
                 }
                 if(institution == null) {
-                    institution = new Institution(name, cnpj, country, state, city, street, number, apartment, geopoint.get(0), geopoint.get(1), items, phone);
+                    institution = new Institution(name, cnpj, country, state, city, street, number, apartment, geopoint.get(0), geopoint.get(1), items, phone, email);
                 }
                 else{
                     institution.setName(name);
@@ -180,6 +180,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
                     institution.setLocation(geopoint.get(0), geopoint.get(1));
                     institution.setItems(items);
                     institution.setPhone(phone);
+                    institution.setEmail(email);
                 }
                 institution.saveInBackground(new SaveCallback() {
                     @Override
@@ -251,7 +252,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
             Toast.makeText(mContext, getString(R.string.password_doesnt_match), Toast.LENGTH_LONG).show();
             isValid = false;
         }
-        else if(items.size() == 0){
+        else if(items == null || items.size() == 0){
             Toast.makeText(mContext, getString(R.string.no_items), Toast.LENGTH_LONG).show();
             isValid = false;
         }

@@ -89,6 +89,7 @@ public class DesireSearchResultActivity extends ActionBarActivity {
         if (id == R.id.ADS_logout) {
             ParseUser.logOut();
             Intent intent = new Intent(this,LoginActivity.class);
+            intent.putExtra("source","institution");
             startActivity(intent);
             finish();
         }

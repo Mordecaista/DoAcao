@@ -350,7 +350,7 @@
     <!-- From: file:/C:/develop/DoAcao2/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="delete">Deletar</string>
-    <string name="desireSearch">Pesquisa de Doadores</string>
+    <string name="desireSearch">Pesquisa de Desejos de Doação</string>
     <string name="desire_delete_sucessfull">Desejo de Doação apagado com sucesso!</string>
     <string name="desire_delete_unsucessfull">Ocorreu um problema ao deletar seu desejo de doação, por favor tente novamente.</string>
     <string name="email">Email</string>
@@ -413,12 +413,12 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="street">Rua</string>
     <string name="submit">Cadastrar</string>
     <string name="submitted_with_success">Cadastrado com Sucesso!</string>
-    <string name="title_activity_add_desire">AddDesireActivity</string>
-    <string name="title_activity_desire_details">DesireDetailsActivity</string>
-    <string name="title_activity_desire_search_result">DesireSearchResultActivity</string>
-    <string name="title_activity_institution_login">InstitutionLoginActivity</string>
-    <string name="title_activity_institution_register">Cadastrar Nova Instituição</string>
-    <string name="title_activity_institution_search_result">InstitutionSearchResultActivity</string>
+    <string name="title_activity_add_desire">Cadastrar Desejo de Doação</string>
+    <string name="title_activity_desire_details">Detalhes do Desejo</string>
+    <string name="title_activity_desire_search_result">Resultados</string>
+    <string name="title_activity_institution_login">DoAção</string>
+    <string name="title_activity_institution_register">Dados da Instituição</string>
+    <string name="title_activity_institution_search_result">Resultados</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_my_desires">MyDesiresActivity</string>
     <string name="user_login">Login de Usuário</string>
