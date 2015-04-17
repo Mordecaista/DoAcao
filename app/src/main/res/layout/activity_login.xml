@@ -65,7 +65,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/AL_email"
-            android:hint="@string/email"/>
+            android:hint="@string/email"
+            android:capitalize="none"
+            android:inputType="textEmailAddress" />
 
         <EditText
             android:layout_width="match_parent"

@@ -87,7 +87,8 @@
             android:inputType="textWebEmailAddress|textEmailAddress"
             android:id="@+id/AIG_edit_email"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:capitalize="none"/>
     </LinearLayout>
 
     <LinearLayout

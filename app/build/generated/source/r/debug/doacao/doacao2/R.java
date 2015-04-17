@@ -1980,21 +1980,21 @@ containing a value of this type.
         public static final int powered_by_google_light=0x7f020086;
     }
     public static final class id {
-        public static final int AAD_logout=0x7f0b00b1;
+        public static final int AAD_logout=0x7f0b00b3;
         public static final int AAD_map=0x7f0b0064;
-        public static final int ADD_delete=0x7f0b00b2;
+        public static final int ADD_delete=0x7f0b00b4;
         public static final int ADD_email=0x7f0b006a;
         public static final int ADD_inner_layout1=0x7f0b0066;
         public static final int ADD_inner_layout2=0x7f0b0069;
         public static final int ADD_items=0x7f0b0068;
         public static final int ADD_location=0x7f0b006b;
-        public static final int ADD_logout=0x7f0b00b3;
+        public static final int ADD_logout=0x7f0b00b5;
         public static final int ADD_map=0x7f0b006d;
         public static final int ADD_phone=0x7f0b006c;
         public static final int ADD_user=0x7f0b0067;
-        public static final int ADS_logout=0x7f0b00b4;
+        public static final int ADS_logout=0x7f0b00b6;
         public static final int ADS_results=0x7f0b006e;
-        public static final int ADS_search=0x7f0b00b5;
+        public static final int ADS_search=0x7f0b00b7;
         public static final int AIG_apartment=0x7f0b0085;
         public static final int AIG_city=0x7f0b007f;
         public static final int AIG_cnpj=0x7f0b0071;
@@ -2014,20 +2014,20 @@ containing a value of this type.
         public static final int AIG_edit_street=0x7f0b0082;
         public static final int AIG_email=0x7f0b0075;
         public static final int AIG_items=0x7f0b0087;
-        public static final int AIG_logout=0x7f0b00b7;
+        public static final int AIG_logout=0x7f0b00b9;
         public static final int AIG_name=0x7f0b006f;
         public static final int AIG_number=0x7f0b0083;
         public static final int AIG_password=0x7f0b0077;
         public static final int AIG_phone=0x7f0b0073;
-        public static final int AIG_search=0x7f0b00b8;
+        public static final int AIG_search=0x7f0b00ba;
         public static final int AIG_state=0x7f0b007d;
         public static final int AIG_street=0x7f0b0081;
         public static final int AIG_submit=0x7f0b0088;
         public static final int AIL_linear1=0x7f0b008a;
         public static final int AIL_linear2=0x7f0b008d;
-        public static final int AIS_logout=0x7f0b00b9;
+        public static final int AIS_logout=0x7f0b00bb;
         public static final int AIS_results=0x7f0b0089;
-        public static final int AIS_search=0x7f0b00ba;
+        public static final int AIS_search=0x7f0b00bc;
         public static final int AL_email=0x7f0b008f;
         public static final int AL_faceButton=0x7f0b008c;
         public static final int AL_login=0x7f0b0092;
@@ -2036,7 +2036,7 @@ containing a value of this type.
         public static final int AL_title=0x7f0b008e;
         public static final int AL_user=0x7f0b008b;
         public static final int AMD_results=0x7f0b0094;
-        public static final int action_add=0x7f0b00be;
+        public static final int action_add=0x7f0b00c0;
         public static final int action_bar=0x7f0b0050;
         public static final int action_bar_activity_content=0x7f0b0000;
         public static final int action_bar_container=0x7f0b004f;
@@ -2045,15 +2045,15 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f0b003e;
         public static final int action_bar_title=0x7f0b003d;
         public static final int action_context_bar=0x7f0b0051;
-        public static final int action_logout=0x7f0b00bc;
+        public static final int action_logout=0x7f0b00be;
         public static final int action_menu_divider=0x7f0b0002;
         public static final int action_menu_presenter=0x7f0b0003;
         public static final int action_mode_bar=0x7f0b004d;
         public static final int action_mode_bar_stub=0x7f0b004c;
         public static final int action_mode_close_button=0x7f0b003f;
-        public static final int action_myDesires=0x7f0b00bb;
-        public static final int action_search=0x7f0b00bd;
-        public static final int action_settings=0x7f0b00b6;
+        public static final int action_myDesires=0x7f0b00bd;
+        public static final int action_search=0x7f0b00bf;
+        public static final int action_settings=0x7f0b00b8;
         public static final int activity_chooser_view_content=0x7f0b0040;
         public static final int adjust_height=0x7f0b0016;
         public static final int adjust_width=0x7f0b0017;
@@ -2118,6 +2118,8 @@ containing a value of this type.
         public static final int icon=0x7f0b0045;
         public static final int ifRoom=0x7f0b001d;
         public static final int image=0x7f0b0042;
+        public static final int info=0x7f0b00b2;
+        public static final int info_label=0x7f0b00b1;
         public static final int inline=0x7f0b0036;
         public static final int items=0x7f0b005e;
         public static final int large=0x7f0b003b;
@@ -2224,7 +2226,8 @@ containing a value of this type.
         public static final int com_facebook_tooltip_bubble=0x7f03002c;
         public static final int com_facebook_usersettingsfragment=0x7f03002d;
         public static final int list_item_layout=0x7f03002e;
-        public static final int support_simple_spinner_dropdown_item=0x7f03002f;
+        public static final int marker=0x7f03002f;
+        public static final int support_simple_spinner_dropdown_item=0x7f030030;
     }
     public static final class menu {
         public static final int menu_add_desire=0x7f0f0000;

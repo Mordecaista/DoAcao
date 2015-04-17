@@ -139,7 +139,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
         @Override
         public void onClick(View v){
             String name = mName.getText().toString();
-            int cnpj = Integer.parseInt(mCNPJ.getText().toString());
+            long cnpj = Long.parseLong(mCNPJ.getText().toString());
             String email = mEmail.getText().toString();
             String password = mPassword.getText().toString();
             String passConf = mPasswordConf.getText().toString();
@@ -149,7 +149,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
             String street = mStreet.getText().toString();
             int number = Integer.parseInt(mNumber.getText().toString());
             String apartment = mApartment.getText().toString();
-            int phone = Integer.parseInt(mPhone.getText().toString());
+            long phone = Long.parseLong(mPhone.getText().toString());
 
             ArrayList<Double> geopoint = getLocationFromAddress(number+" "+street+", "+city+", "+state+", "+country);
             if(valid(name, cnpj, email, password, passConf, country, state, city, street, number, apartment, geopoint.get(0), geopoint.get(1), items, phone)) {
@@ -245,7 +245,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
         this.items = aux;
     }
 
-    private boolean valid(String name, int cnpj, String email, String password, String passConf, String country, String state, String city, String street, int number, String apartment, Double latitude, Double longitude, ArrayList<String> items, int phone) {
+    private boolean valid(String name, long cnpj, String email, String password, String passConf, String country, String state, String city, String street, int number, String apartment, Double latitude, Double longitude, ArrayList<String> items, long phone) {
         //TODO:Add more validations if needed (fields null pending)
         boolean isValid = true;
         if(!password.equals(passConf)){

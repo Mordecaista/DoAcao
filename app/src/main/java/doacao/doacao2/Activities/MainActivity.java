@@ -14,6 +14,8 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -153,6 +155,21 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                         String aux = "Telefone: " + ((Institution)parseObjects.get(i)).getPhone() +
                                      "\nEmail: " + ((Institution)parseObjects.get(i)).getEmail() +
                                      "\nPrecisa de:\n" + formatItems(((Institution)parseObjects.get(i)).getItems());
+                        map.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+                            @Override
+                            public View getInfoWindow(Marker arg0) {
+                                return null;
+                            }
+                            @Override
+                            public View getInfoContents(Marker marker) {
+                                View v = getLayoutInflater().inflate(R.layout.marker, null);
+                                TextView info = (TextView) v.findViewById(R.id.info);
+                                info.setText(marker.getSnippet());
+                                TextView info_label = (TextView) v.findViewById(R.id.info_label);
+                                info_label.setText(marker.getTitle());
+                                return v;
+                            }
+                        });
                         Marker marker = map.addMarker(new MarkerOptions()
                                 .title(((Institution)parseObjects.get(i)).getName())
                                 .snippet(aux) //TODO:fix which data is displayed

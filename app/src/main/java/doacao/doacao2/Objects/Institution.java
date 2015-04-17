@@ -21,8 +21,8 @@ public class Institution extends ParseObject{
 
     }
 
-    public Institution(String name, int cnpj, String country, String state, String city, String street, int number, String apartment,
-                       double latitude, double longitude, ArrayList<String> items, int phone, String email){
+    public Institution(String name, long cnpj, String country, String state, String city, String street, int number, String apartment,
+                       double latitude, double longitude, ArrayList<String> items, long phone, String email){
         put("name",name);
         put("cnpj",cnpj);
         put("country",country);
@@ -61,8 +61,8 @@ public class Institution extends ParseObject{
     public String getName(){
         return getString("name");
     }
-    public int getCNPJ(){
-        return getInt("cnpj");
+    public long getCNPJ(){
+        return getLong("cnpj");
     }
     public String getCountry(){
         return getString("country");
@@ -101,13 +101,13 @@ public class Institution extends ParseObject{
                 return items;
             }
     }
-    public int getPhone(){
-        return getInt("phone");
+    public long getPhone(){
+        return getLong("phone");
     }
     public void setName(String name){
         put("name",name);
     }
-    public void setCNPJ(int cnpj){
+    public void setCNPJ(long cnpj){
         put("cnpj",cnpj);
     }
     public void setCountry(String country){
@@ -140,7 +140,7 @@ public class Institution extends ParseObject{
         for(String n : items) myArray.put(n);
         put("items",myArray);
     }
-    public void setPhone(int phone){
+    public void setPhone(long phone){
         put("number",phone);
     }
 }
