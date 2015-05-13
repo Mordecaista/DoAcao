@@ -31,6 +31,7 @@
     <string name="cnpj">CNPJ</string>
     <string name="password">Senha</string>
     <string name="passwordConfirmation">Confirmação</string>
+    <string name="passwordConfirmationlabel">Confirmação de Senha</string>
     <string name="city">Cidade</string>
     <string name="state">Estado</string>
     <string name="street">Rua</string>
@@ -50,7 +51,7 @@
     <string name="password_doesnt_match">Senha não está de acordo com a conferência, favor digitar novamente.</string>
     <string name="no_items">Por favor selecione pelo menos um item.</string>
     <string name="invalid_email">Email inválido. Favor digitar novamente.</string>
-    <string name="fill_to_update">Preencha para atualizar</string>
+    <string name="fill_to_update">Preencha se deseja atualizar</string>
     <string name="cant_save_user">Não foi possível alterar os dados de email e senha, tente novamente mais tarde.</string>
     <string name="logout">Logout</string>
     <string name="title_activity_institution_login">DoAção</string>
@@ -58,13 +59,13 @@
     <string name="login_or_signup">Entrar ou Cadastrar</string>
     <string name="institution_login">Login de Instituição</string>
     <string name="error_login">Não foi possível completar seu login, tente novamente!</string>
-    <string name="user_login">Login de Usuário</string>
+    <string name="user_login">Login de Doador</string>
     <string name="error_face_login">Ocorreu um erro ao logar com o Facebook. Tente novamente!</string>
     <string name="new_institution_conf_pass">Seja bem vindo ao DoAção! Favor digite a confirmação de senha e confirme.</string>
     <string name="session_invalid_error">A sua sessão não é mais válida, favor logar novamente</string>
     <string name="logn_generic_error">Alguma coisa aconteceu errada. Favor tentar novamente.</string>
     <string name="invalid_address">Não foi possível localizar este endereço. Por favor confira o endereço e tente novamente.</string>
-    <string name="title_activity_my_desires">MyDesiresActivity</string>
+    <string name="title_activity_my_desires">Meus desejos de doação</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="apagar_desejo">Você tem certeza que deseja apagar este desejo de doação?</string>
@@ -76,6 +77,8 @@
     <string name="myDesires">Meus Desejos de Doação</string>
     <string name="search_error">Ocorreu um erro durante a busca, por favor tente novamente.</string>
     <string name="searching">Buscando</string>
+    <string name="loggin_in">Fazendo login</string>
+    <string name="email_and_phone_null">Por favor preencha ao menos um dos dois: Email ou Telefone</string>
 
 
 </resources>

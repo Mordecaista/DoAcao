@@ -31,7 +31,8 @@
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/app_name"
-            android:launchMode="singleInstance" >
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,14 +49,16 @@
         <activity
             android:name=".Activities.AddDesireActivity"
             android:label="@string/title_activity_add_desire"
-            android:parentActivityName=".Activities.MainActivity" >
+            android:parentActivityName=".Activities.MainActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Activities.MainActivity" />
         </activity>
         <activity
             android:name=".Activities.InstitutionRegisterActivity"
-            android:label="@string/title_activity_institution_register" >
+            android:label="@string/title_activity_institution_register"
+            android:screenOrientation="portrait">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -72,7 +75,8 @@
         <activity
             android:name=".Activities.DesireSearchResultActivity"
             android:label="@string/desireSearch"
-            android:launchMode="singleTop" >
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -89,12 +93,14 @@
         </activity>
         <activity
             android:name=".Activities.DesireDetailsActivity"
-            android:label="@string/title_activity_desire_details" >
+            android:label="@string/title_activity_desire_details"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".Activities.InstitutionSearchResultActivity"
             android:label="@string/title_activity_institution_search_result"
-            android:launchMode="singleTop" >
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -111,15 +117,18 @@
         </activity>
         <activity
             android:name=".Activities.LoginActivity"
-            android:label="@string/title_activity_institution_login" >
+            android:label="@string/title_activity_institution_login"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.facebook.LoginActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".Activities.MyDesiresActivity"
-            android:label="@string/title_activity_my_desires" >
+            android:label="@string/title_activity_my_desires"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

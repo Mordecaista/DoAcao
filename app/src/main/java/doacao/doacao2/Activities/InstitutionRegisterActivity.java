@@ -227,7 +227,7 @@ public class InstitutionRegisterActivity extends ActionBarActivity implements Mu
         query.whereEqualTo("userId",ParseUser.getCurrentUser().getObjectId()); //TODO:Change this criteria for a real one
         try {
             List<ParseObject> results = query.find();
-            if(results.size()>0)
+            if(results.size() > 0)
                 inst = (Institution)results.get(0);
         }
         catch (ParseException e){

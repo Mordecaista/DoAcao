@@ -102,13 +102,17 @@ public class AddDesireActivity extends ActionBarActivity implements OnMapReadyCa
     };
 
     private boolean validate(String email, String phone, LatLng aux, ArrayList<String> items) {
-        boolean isValid = true;//TODO:more validations (email or phone must be selected, one can be empty, not both)
+        boolean isValid = true;//TODO:more validations
         if(items == null || items.size() == 0){
             Toast.makeText(mContext, getString(R.string.no_items), Toast.LENGTH_LONG).show();
             isValid = false;
         }
-        else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        else if(email != null && !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             Toast.makeText(mContext, getString(R.string.invalid_email), Toast.LENGTH_LONG).show();
+            isValid = false;
+        }
+        else if(email == null && phone == null){
+            Toast.makeText(mContext, getString(R.string.email_and_phone_null), Toast.LENGTH_LONG).show();
             isValid = false;
         }
         return isValid;

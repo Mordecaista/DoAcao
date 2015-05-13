@@ -172,13 +172,10 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                         });
                         Marker marker = map.addMarker(new MarkerOptions()
                                 .title(((Institution)parseObjects.get(i)).getName())
-                                .snippet(aux) //TODO:fix which data is displayed
+                                .snippet(aux)
                                 .position(location));
                         markers.put(((Institution) parseObjects.get(i)).getObjectId(),marker);
                     }
-                }
-                else{
-                    //TODO:something here? Guess not
                 }
             }
         });

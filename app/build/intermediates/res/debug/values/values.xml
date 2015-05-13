@@ -354,11 +354,12 @@
     <string name="desire_delete_sucessfull">Desejo de Doação apagado com sucesso!</string>
     <string name="desire_delete_unsucessfull">Ocorreu um problema ao deletar seu desejo de doação, por favor tente novamente.</string>
     <string name="email">Email</string>
+    <string name="email_and_phone_null">Por favor preencha ao menos um dos dois: Email ou Telefone</string>
     <string name="email_label">Email:</string>
     <string name="error">Erro. Tente Novamente!</string>
     <string name="error_face_login">Ocorreu um erro ao logar com o Facebook. Tente novamente!</string>
     <string name="error_login">Não foi possível completar seu login, tente novamente!</string>
-    <string name="fill_to_update">Preencha para atualizar</string>
+    <string name="fill_to_update">Preencha se deseja atualizar</string>
     <!-- From: file:/C:/develop/DoAcao2/app/src/debug/res/values/google_maps_api.xml -->
     <eat-comment/>
     <string name="google_maps_key" templateMergeStrategy="preserve">AIzaSyDShYqo42EZlaiBN4c1r2PWSpY2hybemCU</string>
@@ -381,6 +382,7 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="invalid_address">Não foi possível localizar este endereço. Por favor confira o endereço e tente novamente.</string>
     <string name="invalid_email">Email inválido. Favor digitar novamente.</string>
     <string name="location">Localização</string>
+    <string name="loggin_in">Fazendo login</string>
     <string name="login_or_signup">Entrar ou Cadastrar</string>
     <string name="logn_generic_error">Alguma coisa aconteceu errada. Favor tentar novamente.</string>
     <string name="logout">Logout</string>
@@ -392,6 +394,7 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="number">Numero</string>
     <string name="password">Senha</string>
     <string name="passwordConfirmation">Confirmação</string>
+    <string name="passwordConfirmationlabel">Confirmação de Senha</string>
     <string name="password_doesnt_match">Senha não está de acordo com a conferência, favor digitar novamente.</string>
     <string name="phone">Telefone</string>
     <string name="phone_label">Telefone:</string>
@@ -420,8 +423,8 @@ https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend
     <string name="title_activity_institution_register">Dados da Instituição</string>
     <string name="title_activity_institution_search_result">Resultados</string>
     <string name="title_activity_maps">Map</string>
-    <string name="title_activity_my_desires">MyDesiresActivity</string>
-    <string name="user_login">Login de Usuário</string>
+    <string name="title_activity_my_desires">Meus desejos de doação</string>
+    <string name="user_login">Login de Doador</string>
     <!-- From: file:/C:/develop/DoAcao2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>

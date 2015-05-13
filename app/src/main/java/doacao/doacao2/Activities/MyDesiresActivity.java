@@ -128,7 +128,13 @@ public class MyDesiresActivity extends ActionBarActivity {
             List<ParseObject> results = query.find();
             for (int i = 0; i < results.size() && i < 100; i++) {
                 ArrayList<String> temp = new ArrayList<String>();
-                temp.add(((Desire) results.get(i)).getCreatedAt().toString());
+                ArrayList<String> items = ((Desire) results.get(i)).getItems();
+                String aux = "";
+                for(String n : items){
+                    aux += n+", ";
+                }
+                aux = aux.substring(0,aux.length()-2);
+                temp.add(aux);
                 temp.add(((Desire) results.get(i)).getObjectId().toString());
                 array.add(temp);
             }

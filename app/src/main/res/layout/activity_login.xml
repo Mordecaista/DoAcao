@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:id="@+id/AL_pass_conf"
-            android:hint="@string/passwordConfirmation"
+            android:hint="@string/passwordConfirmationlabel"
             android:visibility="invisible"/>
 
         <Button

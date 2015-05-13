@@ -102,9 +102,10 @@ public class InstitutionSearchResultActivity extends ActionBarActivity {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Institution");
         ParseQuery<ParseObject> query2 = ParseQuery.getQuery("Institution");
         List<ParseQuery<ParseObject>> queries = new ArrayList<ParseQuery<ParseObject>>();
-        if(criteria != null){
-            query.whereContains("name",criteria);
-            query2.whereContainedIn("items", Arrays.asList(criteria));
+        String clearedCriteria = clearCriteria(criteria);
+        if(clearedCriteria != null){
+            query.whereContains("name",clearedCriteria);
+            query2.whereContainedIn("items", Arrays.asList(clearedCriteria));
             queries.add(query);
         }
         queries.add(query2);
@@ -120,7 +121,7 @@ public class InstitutionSearchResultActivity extends ActionBarActivity {
                 if (e == null) {
                     for (int i = 0; i < results.size(); i++) {
                         ArrayList<String> temp = new ArrayList<String>();
-                        temp.add(((Institution) results.get(i)).getName()); //TODO:fix which data is displayed
+                        temp.add(((Institution) results.get(i)).getName());
                         temp.add(((Institution) results.get(i)).getObjectId().toString());
                         array.add(temp);
                     }
@@ -134,5 +135,18 @@ public class InstitutionSearchResultActivity extends ActionBarActivity {
             }
         });
         progress = ProgressDialog.show(this, getString(R.string.searching), "", true);
+    }
+
+    public String clearCriteria(String criteria){
+        String cleared = "";
+        if (criteria.length() == 0)
+            return cleared;
+        else if (criteria.length() == 1)
+            cleared = criteria.toUpperCase();
+        else
+            cleared = criteria.substring(0,1).toUpperCase()+ criteria.substring(1).toLowerCase();
+        if(cleared.charAt(cleared.length()-1)== ' ')
+            cleared = cleared.substring(0,cleared.length()-1);
+        return cleared;
     }
 }

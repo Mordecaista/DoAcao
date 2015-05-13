@@ -1,5 +1,6 @@
 package doacao.doacao2.Activities;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -39,6 +40,7 @@ public class LoginActivity extends ActionBarActivity {
     private Button faceButton;
     private Context mContext;
     private ActionBarActivity act;
+    private ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,8 +107,10 @@ public class LoginActivity extends ActionBarActivity {
                             finishActivity("user");
                         }
                     }
+                    progress.dismiss();
                 }
             });
+            progress = ProgressDialog.show(mContext, getString(R.string.loggin_in), "", true);
         }
     };
 

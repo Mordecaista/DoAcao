@@ -24,7 +24,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/AIG_edit_name"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="text"/>
     </LinearLayout>
 
     <LinearLayout
@@ -87,7 +88,8 @@
             android:inputType="textWebEmailAddress|textEmailAddress"
             android:id="@+id/AIG_edit_email"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:capitalize="none"/>
     </LinearLayout>
 
     <LinearLayout
@@ -151,7 +153,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/AIG_edit_country"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="text" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -165,7 +168,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/AIG_edit_state"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="text"/>
 
     </LinearLayout>
 
@@ -187,7 +191,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/AIG_edit_city"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="text"/>
     </LinearLayout>
 
     <LinearLayout
@@ -207,7 +212,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/AIG_edit_street"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="text"/>
     </LinearLayout>
 
     <LinearLayout
@@ -228,7 +234,8 @@
             android:inputType="number"
             android:id="@+id/AIG_edit_number"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:imeOptions="actionNext"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -242,7 +249,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/AIG_edit_apartment"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="text"/>
     </LinearLayout>
 
     <!--<Spinner-->

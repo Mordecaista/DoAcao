@@ -29,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
+            android:capitalize="none"
             android:ems="10"
             android:id="@+id/edit_email"
             android:layout_weight="1" />
